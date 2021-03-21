@@ -47,6 +47,13 @@ export default new Vuex.Store({
 
       return data;
     },
+    async findInventories(_, code) {
+      let {data} = await rest({
+        method: 'get',
+        url:`inventories/find/${code}`
+      });
+      return data;
+    },
   },
   modules: {
   },

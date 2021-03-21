@@ -200,7 +200,7 @@
               <b-col>
                 <b-button type="button" @click="createOrder()" variant="primary" size="lg" class="mr-3" v-if="form.status === 0">До чернетки</b-button>
                 <b-button type="button" @click="saveOrder()" variant="primary" size="lg" class="mr-3">Зберегти</b-button>
-                <b-button type="reset" variant="danger" size="lg">Відмовити</b-button>
+                <b-button type="button" @click="blockOrder()" variant="danger" size="lg">Відмовити</b-button>
               </b-col>
             </b-row>
           </b-form>
@@ -213,7 +213,7 @@
 
 <script>
 
-import {mapActions} from "vuex";
+import {mapActions, mapGetters} from "vuex";
 
 export default {
   name: 'Form',
@@ -228,9 +228,9 @@ export default {
         apartment: null,
         house_building: null,
         office_number: null,
-        total_area: 0.00,
-        main_area: 0.00,
-        land_area: 0.00,
+        total_area: null,
+        main_area: null,
+        land_area: null,
         floor: 1,
         status: 0
       },
@@ -242,7 +242,11 @@ export default {
         {text: 'Суворовський', value: 4}
       ],
       type_object: [{text: 'Оберіть тип об\'єкту', value: null}, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      total: 0,
     }
+  },
+  computed: {
+    ...mapGetters(['inventoriesData']),
   },
   methods: {
     ...mapActions(['createInventories', 'getCurrentInventories', 'saveInventories']),
@@ -263,11 +267,25 @@ export default {
       const { id } = this.$route.query;
       const formData = new FormData();
 
-      Object.entries({data: this.form, id}).map(item => {
+      Object.entries(this.form).map(item => {
         formData.append(item[0], item[1]);
       })
 
-      this.saveInventories(this.form, id).then(()=> {
+      this.saveInventories({data: this.form, id}).then(()=> {
+        this.$router.push('/admin');
+      })
+    },
+    blockOrder() {
+      this.form.status = 2;
+
+      const { id } = this.$route.query;
+      const formData = new FormData();
+
+      Object.entries(this.form).map(item => {
+        formData.append(item[0], item[1]);
+      })
+
+      this.saveInventories({data: this.form, id}).then(()=> {
         this.$router.push('/admin');
       })
     },

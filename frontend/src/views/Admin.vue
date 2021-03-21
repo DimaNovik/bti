@@ -23,11 +23,15 @@
       <b-row>
         <b-col>
           <b-table striped
-                   hover :items="setAllDataTable"
+                   hover
+                   responsive
+                   small
+                   :items="setAllDataTable"
                    :fields="fields"
                    :current-page="currentPage"
                    :per-page="perPage"
-                   responsive
+                   :filter="search"
+                   @filtered="onFiltered"
                    class="admin__table"></b-table>
         </b-col>
       </b-row>
@@ -54,9 +58,9 @@ export default {
   data() {
     return {
       search: null,
-      currentPage: 0,
-      perPage: 10,
-      totalRows: 25,
+      currentPage: 1,
+      perPage: 20,
+      totalRows: null,
       fields: [
         {
           key: "code",
@@ -140,10 +144,25 @@ export default {
     ...mapGetters(['inventoriesData']),
     setAllDataTable() {
       return this.inventoriesData.length ? this.inventoriesData : [];
+    },
+    sortOptions() {
+      return this.fields
+          .filter(f => f.sortable)
+          .map(f => {
+            return { text: f.label, value: f.key }
+          })
     }
   },
   methods: {
     ...mapActions(['getAllData']),
+    openToEdit() {
+      console.log(1);
+    },
+    onFiltered(filteredItems) {
+      // Trigger pagination to update the number of buttons/pages due to filtering
+      this.totalRows = filteredItems.length
+      this.currentPage = 1
+    }
   },
   created() {
     this.totalRows = this.inventoriesData.length
@@ -160,6 +179,9 @@ export default {
   &__table {
     .table thead th, .table th, .table td {
       white-space: nowrap;
+    }
+    .table tr {
+      cursor: pointer;
     }
   }
 }
