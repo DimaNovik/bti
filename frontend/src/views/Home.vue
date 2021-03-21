@@ -17,6 +17,7 @@
                 placeholder="000000000"
                 size="lg"
                 required
+                max="9"
                 class="text-center"
             ></b-form-input>
           </b-form-group>
