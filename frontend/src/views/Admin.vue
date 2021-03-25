@@ -32,7 +32,14 @@
                    :per-page="perPage"
                    :filter="search"
                    @filtered="onFiltered"
-                   class="admin__table"></b-table>
+                   @row-clicked="(item) => openToEdit(item)"
+                   class="admin__table">
+            <template v-slot:cell(status)="row">
+              <span class="yellow" v-if="row.item.status === 0">Чернетка</span>
+              <span class="green" v-if="row.item.status === 1">Ухвалено</span>
+              <span class="red" v-if="row.item.status === 2">Відхилено</span>
+            </template>
+          </b-table>
         </b-col>
       </b-row>
       <b-row class="mt-3 mb-5">
@@ -155,11 +162,10 @@ export default {
   },
   methods: {
     ...mapActions(['getAllData']),
-    openToEdit() {
-      console.log(1);
+    openToEdit(item) {
+      this.$router.push({path: '/form', query: { id: item.id}});
     },
     onFiltered(filteredItems) {
-      // Trigger pagination to update the number of buttons/pages due to filtering
       this.totalRows = filteredItems.length
       this.currentPage = 1
     }
@@ -184,5 +190,17 @@ export default {
       cursor: pointer;
     }
   }
+}
+
+.yellow {
+  color:  #ffc107;
+}
+
+.red {
+  color: #c82333;
+}
+
+.green {
+  color: #1c7430;
 }
 </style>

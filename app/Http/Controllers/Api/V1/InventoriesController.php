@@ -15,6 +15,7 @@ class InventoriesController extends Controller
      */
     public function index()
     {
+
         return bti_inventories::all();
     }
 
@@ -88,10 +89,9 @@ class InventoriesController extends Controller
         //
     }
 
-    public function find(Request $request)
+    public function find(Request $request, $id)
     {
-        dd($request);
-        $inventories = bti_inventories::where('code', 'like', '%T%')->get();
+        $inventories = bti_inventories::where('code', '=', $id)->where('status', '=', 1)->get();
         return $inventories;
     }
 }

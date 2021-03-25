@@ -15,5 +15,5 @@ use Illuminate\Http\Request;
 
 Route::group(['prefix' => '/v1', 'namespace' => 'Api\V1', 'as' => 'api.'], function () {
     Route::resource('inventories', 'InventoriesController', ['except' => ['create', 'edit']]);
-    Route::resource('inventories/find', 'InventoriesController', ['except' => ['create', 'edit']]);
+    Route::get('inventories/find/{id}', 'InventoriesController@find');
 });

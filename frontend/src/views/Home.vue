@@ -30,7 +30,7 @@
       <b-col cols="auto" md="3"></b-col>
     </b-row>
     <transition appear name="fade">
-      <b-row v-if="result.length">
+      <b-row v-if="result.length > 0">
         <b-col cols="auto" md="3"></b-col>
         <b-col cols="12" md="6">
           <b-card class="mt-3" header="Інвентаризаціїна справа передана до КП «БТІ» (зберігання)">
@@ -43,6 +43,13 @@
           <p>Площа земельної ділянки: <b>{{getResult.land_area}}м<sup>2</sup></b></p>
           <p>Поверхи: <b>{{getResult.floor}}</b></p>
           </b-card>
+        </b-col>
+        <b-col cols="auto" md="3"></b-col>
+      </b-row>
+      <b-row v-if="error">
+        <b-col cols="auto" md="3"></b-col>
+        <b-col cols="12" md="6">
+          <p class="red">Інвентаризаціїна справа не знайдена</p>
         </b-col>
         <b-col cols="auto" md="3"></b-col>
       </b-row>
@@ -60,9 +67,10 @@ export default {
   name: 'Home',
   data() {
     return {
-      code: 0,
-      placeholder: '000000000',
+      code: '',
+      placeholder: '',
       result: [],
+      error: false,
     }
   },
   computed: {
@@ -76,8 +84,16 @@ export default {
   methods: {
     ...mapActions(['findInventories']),
     findOrder() {
+      this.error = false;
+      this.result = [];
       this.findInventories(this.code).then(response => {
-        this.result.push(response)
+        if(response.length > 0) {
+          this.result.push(response)
+        } else {
+          this.error = true;
+        }
+      }).catch(() => {
+        this.error = true;
       })
     },
     formatNumber(e){
@@ -93,5 +109,9 @@ export default {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
   opacity: 0;
+}
+
+.red {
+  color: #c82333;
 }
 </style>
