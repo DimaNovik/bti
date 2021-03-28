@@ -1,0 +1,87 @@
+<template>
+  <b-container fluid>
+    <b-row class="menu">
+      <b-col>
+        <nav class="menu__area">
+          <ul class="menu__nav">
+            <li v-for="(item, index) in menu" :key="index" class="menu__item">
+              <a :href="item.link" class="menu__link">{{ item.title }}</a>
+            </li>
+          </ul>
+        </nav>
+      </b-col>
+    </b-row>
+  </b-container>
+</template>
+
+<script>
+export default {
+  name: 'Menu',
+  data() {
+    return {
+      menu: [
+        {
+          title: 'Про підприємство',
+          link: 'https://omr.gov.ua/ua/city/enterprises/bti'
+        },
+        {
+          title: 'Напрямки роботи',
+          link: '/'
+        },
+        {
+          title: 'Сервіси',
+          link: '/'
+        },
+        {
+          title: 'Публічна інформація',
+          link: '/'
+        },
+      ]
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+.menu {
+  background-color: #a10909;
+
+  &__area {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+
+    @media screen and (max-width: 968px) {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-color .3s ease, color .3s ease;
+
+    @media screen and (max-width: 680px){
+      padding: 15px;
+    }
+
+    &:hover {
+      background-color: #a5978b;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+}
+</style>

@@ -91,7 +91,13 @@ class InventoriesController extends Controller
 
     public function find(Request $request, $id)
     {
-        $inventories = bti_inventories::where('code', '=', $id)->where('status', '=', 1)->get();
+        $inventories = bti_inventories::where('code', '=', intval($id))->where('status', 1)->get();
         return $inventories;
+    }
+
+    public function findLast()
+    {
+        $inventoriesLast = bti_inventories::orderBy('id', 'desk')->first();
+        return $inventoriesLast;
     }
 }

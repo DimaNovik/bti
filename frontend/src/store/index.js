@@ -1,16 +1,27 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import rest from '@/services/rest';
+import Cookies from "js-cookie";
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
     allData: [],
+    lastInventId: 0,
+    user: null
   },
   mutations: {
     setAllData: (state, data) => {
       state.allData = data;
+    },
+
+    setLastInvent: (state, id) => {
+      state.lastInventId = id ? id+1 : 1;
+    },
+
+    setUser: (state, data) => {
+      state.user = data;
     },
   },
   actions: {
@@ -54,10 +65,66 @@ export default new Vuex.Store({
       });
       return data;
     },
+    async findLast({commit}) {
+      let {data} = await rest({
+        method: 'post',
+        url:`inventories/last`,
+      });
+
+      commit('setLastInvent', data.id)
+      return data;
+    },
+    async registration(_, params) {
+      let {data} = await rest({
+        method: 'post',
+        url:`auth/registration`,
+        data: params
+      });
+
+      return data;
+    },
+    async loginUser(_, formData) {
+
+      let {data} = await rest({
+        method: 'post',
+        url:`auth/login`,
+        data: formData,
+      });
+
+      Cookies.set('access_token', data.access_token);
+
+      return data;
+    },
+    async checkUser({commit}) {
+
+      let {data} = await rest({
+        method: 'post',
+        url:`auth/me`,
+      });
+
+      commit('setUser', data)
+
+      return data;
+    },
+
+    async logout({commit}) {
+
+      let {data} = await rest({
+        method: 'post',
+        url:`auth/logout`,
+      });
+
+      commit('setUser', null);
+      Cookies.remove('access_token');
+
+      return data;
+    },
   },
   modules: {
   },
   getters: {
     inventoriesData: (state) =>  state.allData,
+    lastInventId: (state) =>  state.lastInventId.toString(),
+    user: (state) =>  state.user,
   }
 })
