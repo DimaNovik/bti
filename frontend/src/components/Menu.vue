@@ -1,15 +1,19 @@
 <template>
   <b-container fluid>
     <b-row class="menu">
-      <b-col>
+      <b-col cols="auto" md="2"></b-col>
+      <b-col cols="12" md="8">
         <nav class="menu__area">
           <ul class="menu__nav">
             <li v-for="(item, index) in menu" :key="index" class="menu__item">
-              <a :href="item.link" class="menu__link">{{ item.title }}</a>
+              <a :href="item.link"
+               class="menu__link" 
+               :target="item.target">{{ item.title }}</a>
             </li>
           </ul>
         </nav>
       </b-col>
+      <b-col cols="auto" md="2"></b-col>
     </b-row>
   </b-container>
 </template>
@@ -22,7 +26,8 @@ export default {
       menu: [
         {
           title: 'Про підприємство',
-          link: 'https://omr.gov.ua/ua/city/enterprises/bti'
+          link: 'https://omr.gov.ua/ua/city/enterprises/bti',
+          target: '_blank'
         },
         {
           title: 'Напрямки роботи',
@@ -48,12 +53,14 @@ export default {
 
   &__area {
     display: flex;
-    justify-content: center;
+   
   }
 
   &__nav {
+    width:100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
 

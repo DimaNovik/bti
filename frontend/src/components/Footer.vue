@@ -4,7 +4,7 @@
       <b-row>
         <b-col>
           <div class="footer__area">
-            <p class="footer__text">КП «БЮРО ТЕХНІЧНОЇ ІНВЕНТАРИЗАЦІЇ» м. Одеса</p>
+            <p class="footer__text">КОМУНАЛЬНЕ ПІДПРИЄМСТВО «БЮРО ТЕХНІЧНОЇ ІНВЕНТАРИЗАЦІЇ» ОДЕСЬКОЇ МІСЬКОЇ РАДИ</p>
             <p class="footer__text">Усі права захищенні &copy; 2021</p>
           </div>
         </b-col>

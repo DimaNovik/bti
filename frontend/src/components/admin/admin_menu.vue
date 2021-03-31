@@ -26,6 +26,11 @@ export default {
           role: [1,2],
         },
         {
+          title: 'Замовлення',
+          component: 'ProposalsTable',
+          role: [1, 3]
+        },
+        {
           title: 'Додати користувача',
           component: 'AddUser',
           role: [1]

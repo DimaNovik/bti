@@ -1,15 +1,17 @@
 <template>
   <b-row>
-    <b-col>
+    <b-col xl="1"></b-col>
+    <b-col xl="10" center>
       <header class="header">
         <router-link to="/" class="header__logo">
-          <img src="/img/logo.png" alt="" class="header__img">
-        </router-link>
-        <div class="header__inform">
-          <p class="header__inform_text"><b>Увага! Сайт знаходиться в розробці</b></p>
-        </div>
+              <img src="/img/logo.png" alt="" class="header__img">
+            </router-link>
+            <div class="header__inform">
+              <p class="header__inform_text"><b>Увага! Сайт знаходиться в розробці</b></p>
+            </div>
       </header>
     </b-col>
+    <b-col xl="1"></b-col>
   </b-row>
 </template>
 <script>
@@ -31,25 +33,26 @@ export default {
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: contain;
-    background-color: #fcfcfc;
+    background-color: #fff;
     padding: 62px 20px;
-
+    
     @media screen and (max-width: 680px){
       padding: 20px 0;
-      background-size: 130% auto;
-      background-position: 50% 100%;
+      background-size: cover;
+      background-position: 55% 100%;
     }
 
     &__logo {
       display: flex;
-      justify-content: center;
       width: 50%;
 
       @media screen and (max-width: 680px){
         width: 100%;
 
         img {
+          width: 90%;
           height: auto;
+          margin: 0 auto;
         }
       }
     }

@@ -4,7 +4,7 @@
       <b-container>
         <b-row class="mt-5">
           <b-col cols="12" md="6">
-            <b-form @submit.prevent="onSubmit">
+            <b-form @submit.prevent="onSubmit" @key.enter="onSubmit">
               <b-form-group
                   id="input-group-1"
                   label="Логін користувача"

@@ -26,13 +26,15 @@ import AddUser from "@/components/admin/add_user";
 import LoginUser from "@/components/admin/login_user";
 import InventTable from "@/components/admin/invent_table";
 import InventForm from "@/components/admin/invent_form";
+import ProposalsTable from "@/components/admin/proposals_table";
+import StartTemplate from "@/components/admin/start_template";
 
 import { mapGetters, mapActions } from 'vuex';
 export default {
   name: 'Admin',
   data() {
     return {
-      currentComponent: InventTable,
+      currentComponent: StartTemplate,
       currentInvent: null,
     }
   },
@@ -41,10 +43,12 @@ export default {
     AddUser,
     LoginUser,
     InventForm,
-    InventTable
+    InventTable,
+    ProposalsTable,
+    StartTemplate
   },
   computed: {
-    ...mapGetters(['user'])
+    ...mapGetters(['user']),
   },
   methods: {
     ...mapActions(['logout']),
