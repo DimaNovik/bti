@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('welcome');
 });
+
+Route::get('/admin/proposals/find_for_pdf/{id}', 'api\V1\ProposalsController@findForPDF');

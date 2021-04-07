@@ -18,7 +18,7 @@
             </b-form>
           </b-col>
           <b-col cols="12" offset-md="6" md="2" align="center">
-            <b-button type="button" variant="danger" size="lg" @click="$emit('componentChange', 'ProposalForm')">Додати</b-button>
+            <b-button type="button" variant="danger" size="lg" @click="$emit('componentChange', 'ProposalsForm')">Додати</b-button>
           </b-col>
         </b-row>
         <b-row class="mb-4">
@@ -50,10 +50,14 @@
                        @filtered="onFiltered"
                        @row-clicked="(item) => openToEdit(item)"
                        class="admin__table">
+                <template v-slot:cell(person)="row">
+                  <span v-if="row.item.person === 1">Юридична</span>
+                  <span v-if="row.item.person === 2">Фізична</span>
+                </template>
                 <template v-slot:cell(status)="row">
                   <span class="yellow" v-if="row.item.status === 0">Чернетка</span>
-                  <span class="green" v-if="row.item.status === 1">Ухвалено</span>
-                  <span class="red" v-if="row.item.status === 2">Відхилено</span>
+                  <span class="green" v-if="row.item.status === 1">Сплачено</span>
+                  <span class="red" v-if="row.item.status === 2">Повернення</span>
                 </template>
               </b-table>
             </b-col>
@@ -99,15 +103,15 @@ export default {
         'Вид роботи': 'type',
         'Юр./Фіз. особа': 'person',
         'Персональні дані': 'personal_data',
-        'Адреса': 'address',
         'Місто': 'city',
+        'Адреса': 'address',
         '№ буд.': 'house_number',
         'Корпус': 'house_building',
         '№ кв.': 'apartment',
         '№ приміщення': 'office',
         'Статус': 'status',
         'Дата створення': 'created_at',
-        'Дата оновлення': 'updated_at',
+        'Дата статусу': 'updated_at',
       },
       fields: [
         {
@@ -140,18 +144,23 @@ export default {
           sortable: true
         },
         {
-          key: "address",
-          label: "Адреса",
-          sortable: true
-        },
-        {
           key: "city",
           label: "Місто",
           sortable: true
         },
         {
+          key: "address",
+          label: "Адреса",
+          sortable: true
+        },
+        {
           key: "house_number",
           label: "№ будинку",
+          sortable: true
+        },
+        {
+          key: "house_building",
+          label: "Корпус",
           sortable: true
         },
         {
@@ -162,11 +171,6 @@ export default {
         {
           key: "office_number",
           label: "№ приміщення",
-          sortable: true
-        },
-        {
-          key: "house_building",
-          label: "Корпус",
           sortable: true
         },
         {
@@ -181,16 +185,16 @@ export default {
         },
         {
           key: "updated_at",
-          label: "Дата оновлення",
+          label: "Дата статусу",
           sortable: true
         },
       ],
     }
   },
   computed: {
-    ...mapGetters(['inventoriesData']),
+    ...mapGetters(['proposalsData']),
     setAllDataTable() {
-      return this.inventoriesData.length ? this.inventoriesData : [];
+      return this.proposalsData.length ? this.proposalsData : [];
     },
     sortOptions() {
       return this.fields
@@ -201,10 +205,10 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['getAllData']),
+    ...mapActions(['getAllProposalsData']),
     openToEdit(item) {
       this.$emit('chooseCurrent', item.id);
-      this.$emit('componentChange', 'InventForm');
+      this.$emit('componentChange', 'ProposalsForm');
     },
     onFiltered(filteredItems) {
       this.totalRows = filteredItems.length
@@ -212,10 +216,10 @@ export default {
     }
   },
   created() {
-    this.totalRows = this.inventoriesData.length
+    this.totalRows = this.proposalsData.length
   },
   mounted() {
-    this.getAllData()
+    this.getAllProposalsData()
   }
 }
 </script>

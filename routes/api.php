@@ -19,10 +19,9 @@ Route::group(['prefix' => '/v1', 'namespace' => 'Api\V1', 'as' => 'api.'], funct
     Route::group(['middleware' => 'auth:api'], static function () {
         Route::resource('inventories', 'InventoriesController', ['except' => ['create', 'edit']]);
         Route::post('inventories/last', 'InventoriesController@findLast');
+        Route::resource('proposals', 'ProposalsController', ['except' => ['create', 'edit']]);
+        Route::post('proposals/last', 'ProposalsController@findLast');
     });
-
-
-
 });
 
 Route::group([

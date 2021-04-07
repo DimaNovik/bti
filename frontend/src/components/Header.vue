@@ -1,18 +1,20 @@
 <template>
-  <b-row>
+<header class="header">
+  <b-row >
     <b-col xl="1"></b-col>
     <b-col xl="10" center>
-      <header class="header">
+      <div class="header__top">
         <router-link to="/" class="header__logo">
-              <img src="/img/logo.png" alt="" class="header__img">
-            </router-link>
-            <div class="header__inform">
-              <p class="header__inform_text"><b>Увага! Сайт знаходиться в розробці</b></p>
-            </div>
-      </header>
+          <img src="/img/logo.png" alt="" class="header__img">
+        </router-link>
+        <div class="header__inform">
+          <p class="header__inform_text"><b>Увага! Сайт знаходиться в розробці</b></p>
+        </div>
+      </div>
     </b-col>
     <b-col xl="1"></b-col>
   </b-row>
+  </header>
 </template>
 <script>
 
@@ -25,10 +27,7 @@ export default {
 <style lang="scss">
   .header {
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    
     background-image: url('/img/bg_main.jpg');
     background-repeat: no-repeat;
     background-position: 50% 0;
@@ -36,6 +35,12 @@ export default {
     background-color: #fff;
     padding: 62px 20px;
     
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
     @media screen and (max-width: 680px){
       padding: 20px 0;
       background-size: cover;

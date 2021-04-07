@@ -96,6 +96,7 @@ export default {
         '№ замовлення': 'code',
         'Район': 'district',
         'Тип об\'єкту': 'type_object',
+        'ПІБ замовника/назва юридичної особи': 'info',
         'Адреса': 'address',
         '№ будинку': 'house_number',
         '№ квартири': 'apartment',
@@ -106,6 +107,7 @@ export default {
         'Площа зем. ділянки': 'land_area',
         'Поверхів': 'floor',
         'Статус': 'status',
+        'Сторінок': 'pages',
         'Дата створення': 'created_at',
         'Дата оновлення': 'updated_at',
       },
@@ -123,6 +125,10 @@ export default {
           key: "type_object",
           label: "Тип об'єкту",
           sortable: true
+        },
+        {
+          key: "info",
+          label: "ПІБ замовника/назва юридичної особи",
         },
         {
           key: "address",
@@ -169,6 +175,10 @@ export default {
           key: "floor",
           label: "Поверхів",
           sortable: true
+        },
+        {
+          key: "pages",
+          label: "Сторінок",
         },
         {
           key: "status",

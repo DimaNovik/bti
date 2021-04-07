@@ -27,6 +27,7 @@ import LoginUser from "@/components/admin/login_user";
 import InventTable from "@/components/admin/invent_table";
 import InventForm from "@/components/admin/invent_form";
 import ProposalsTable from "@/components/admin/proposals_table";
+import ProposalsForm from "@/components/admin/proposals_form";
 import StartTemplate from "@/components/admin/start_template";
 
 import { mapGetters, mapActions } from 'vuex';
@@ -45,6 +46,7 @@ export default {
     InventForm,
     InventTable,
     ProposalsTable,
+    ProposalsForm,
     StartTemplate
   },
   computed: {

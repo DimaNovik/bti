@@ -50,14 +50,30 @@
               ></b-form-select>
             </b-form-group>
 
-            <b-form-textarea
-                id="textarea"
-                v-model="form.address"
-                placeholder="Адреса..."
-                rows="3"
-                size="lg"
-                max-rows="6"
-            ></b-form-textarea>
+            <b-row>
+              <b-col>
+                  <b-form-textarea
+                    id="textarea"
+                    v-model="form.address"
+                    placeholder="Адреса..."
+                    rows="3"
+                    size="lg"
+                    max-rows="6"
+                ></b-form-textarea>
+              </b-col>
+              <b-col>
+                <b-form-textarea
+                    id="textarea"
+                    v-model="form.info"
+                    placeholder="ПІБ замовника/назва юридичної особи"
+                    rows="3"
+                    size="lg"
+                    max-rows="6"
+                ></b-form-textarea>
+              </b-col>
+            </b-row>
+
+            
 
             <b-row class="mt-3">
               <b-col cols="4">
@@ -184,12 +200,28 @@
                 <b-form-group
                     id="input-group-10"
                     label="Кількість поверхів"
-                    label-for="input-0"
+                    label-for="input-10"
                     label-align="left"
                 >
                   <b-form-input
                       id="input-10"
                       v-model="form.floor"
+                      type="number"
+                      placeholder="1"
+                      size="lg"
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+              <b-col cols="12" md="4">
+                <b-form-group
+                    id="input-group-11"
+                    label="Кількість сторінок"
+                    label-for="input-11"
+                    label-align="left"
+                >
+                  <b-form-input
+                      id="input-11"
+                      v-model="form.pages"
                       type="number"
                       placeholder="1"
                       size="lg"
@@ -233,7 +265,9 @@ export default {
         main_area: null,
         land_area: null,
         floor: 1,
-        status: 0
+        status: 0,
+        info: null,
+        pages: 0
       },
       districts: [
         {text: 'Оберіть район', value: null},

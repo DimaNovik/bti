@@ -8,7 +8,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     allData: [],
+    allProposalsData: [],
     lastInventId: 0,
+    lastProposalsId: 0,
     user: null
   },
   mutations: {
@@ -16,8 +18,16 @@ export default new Vuex.Store({
       state.allData = data;
     },
 
+    setAllProposalsData: (state, data) => {
+      state.allProposalsData = data;
+    },
+
     setLastInvent: (state, id) => {
       state.lastInventId = id ? id+1 : 1;
+    },
+
+    setLastProposals: (state, id) => {
+      state.lastProposalsId = id ? id+1 : 1;
     },
 
     setUser: (state, data) => {
@@ -74,6 +84,8 @@ export default new Vuex.Store({
       commit('setLastInvent', data.id)
       return data;
     },
+
+    //user actions
     async registration(_, params) {
       let {data} = await rest({
         method: 'post',
@@ -119,12 +131,64 @@ export default new Vuex.Store({
 
       return data;
     },
+    // Proposals 
+    async getAllProposalsData({commit}) {
+      let {data} = await rest({
+        method: 'get',
+        url:'proposals'
+      });
+
+      commit('setAllProposalsData', data);
+    },
+    async getCurrentProposal(_, id) {
+      let {data} = await rest({
+        method: 'get',
+        url:`proposals/${id}`
+      });
+      return data;
+    },
+    async createProposal(_, params) {
+      let {data} = await rest({
+        method: 'post',
+        url:`proposals`,
+        data: params
+      });
+
+      return data;
+    },
+    async saveProposal(_, params) {
+      let {data} = await rest({
+        method: 'patch',
+        url:`proposals/${params.id}`,
+        data: params.data
+      });
+
+      return data;
+    },
+    async findLastProposal({commit}) {
+      let {data} = await rest({
+        method: 'post',
+        url:`proposals/last`,
+      });
+
+      commit('setLastProposals', data.id)
+      return data;
+    },
+    async generateProposalPDF(_, params) {
+      let {data} = await rest({
+        method: 'get',
+        url:`proposals/findForPDF/${params}`,
+      });
+      return data;
+    },
   },
   modules: {
   },
   getters: {
     inventoriesData: (state) =>  state.allData,
+    proposalsData: (state) =>  state.allProposalsData,
     lastInventId: (state) =>  state.lastInventId.toString(),
+    lastProposalsId: (state) =>  state.lastProposalsId.toString(),
     user: (state) =>  state.user,
   }
 })

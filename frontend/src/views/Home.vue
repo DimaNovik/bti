@@ -23,17 +23,18 @@
                   ></b-form-input>
                 </b-form-group>
                 <b-row>
-                  <b-col col="4"></b-col>
-                  <b-col col="4" align="center">
-                    <b-button type="button"
+                  <b-col cols="4"></b-col>
+                  <b-col cosl="4" align="center">
+                  <b-button type="button"
                               variant="danger"
                               size="lg"
                               class="home__info_btn"
                               :disabled="code.length < 9"
-                              @click="findOrder">Пошук
-                    </b-button>
+                              @click="findOrder">
+                              Пошук
+                              </b-button>
                   </b-col>
-                  <b-col col4></b-col>
+                  <b-col cols="4"></b-col>
                 </b-row>
 
               </b-form>
@@ -100,6 +101,7 @@ export default {
     findOrder() {
       this.error = false;
       this.result = [];
+      this.$refs.invisibleRecaptcha.execute()
       this.findInventories(this.code).then(response => {
         if (response.length > 0) {
           this.result = response;
@@ -112,7 +114,13 @@ export default {
     },
     formatNumber(e) {
       return String(e).substring(0, 9);
-    }
+    },
+    onVerify: function (response) {
+      console.log('Verify: ' + response)
+    },
+    onExpired: function () {
+      console.log('Expired')
+    },
   }
 }
 </script>
