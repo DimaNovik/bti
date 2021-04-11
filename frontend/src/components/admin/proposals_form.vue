@@ -23,7 +23,7 @@
                   ></b-form-input>
                 </b-form-group>
               </b-col>
-              <b-col  cols="12" md="2">
+              <b-col  cols="12" md="4">
                     <b-form-group label="Оберіть тип особи" v-slot="{ ariaDescribedby }">
                         <b-form-radio v-model="form.person" :aria-describedby="ariaDescribedby" name="some-radios" :value="1">Юридична особа</b-form-radio>
                         <b-form-radio v-model="form.person" :aria-describedby="ariaDescribedby" name="some-radios" :value="2">Фізична особа</b-form-radio>
@@ -143,7 +143,7 @@
               <b-col>
                 <b-form-textarea
                     id="textarea"
-                    v-model="form.info"
+                    v-model="form.personal_data"
                     placeholder="ПІБ замовника/назва юридичної особи"
                     rows="3"
                     size="lg"
@@ -212,7 +212,7 @@
                 >
                   <b-form-input
                       id="input-5"
-                      v-model="form.office_number"
+                      v-model="form.office"
                       type="text"
                       placeholder="Введіть № приміщення"
                       size="lg"
@@ -230,8 +230,8 @@
             </b-row>
             <b-row>
               <b-col>
-                <b-link :href="`admin/proposals/find_for_pdf/${getProposalId}`" class="mr-3" size="lg">Роздрукувати</b-link>
-                <b-button type="button" @click="printOrder()" variant="primary" size="lg">Роздрукувати доплату</b-button>
+                <b-link :href="`admin/proposals/find_for_pdf/${getProposalId}`" class="mr-3 link">Роздрукувати</b-link>
+                <b-link href="" class="mr-3 link">Роздрукувати доплату</b-link>
               </b-col>
             </b-row>
           </b-form>
@@ -256,7 +256,7 @@ export default {
         copyes: 0,
         type: null,
         person: 1,
-        person_data: null,
+        personal_data: null,
         address: null,
         city: null,
         house_number: null,
@@ -328,12 +328,13 @@ export default {
     }
   },
   watch: {
-      'form.type'(val) {
-        this.form.copyes = 0;
-        this.form.additionally = 0;
-        
-        this.form.sum = this.type_work_sum.find(item => item.id === val).sum;
-       
+      'form.type': {
+        immediate: false,
+        handler(newVal) {
+          this.form.sum = this.type_work_sum.find(item => item.id === newVal).sum;
+      
+        }
+      
       },
       'form.copyes'(newVal, oldVal) {
           if(newVal != oldVal) {
@@ -352,12 +353,22 @@ export default {
                 this.form.sum = this.form.sum / 2;
               }
           }
+      },
+      'form.additionally'(newVal, oldVal) {
+    
+         if(newVal != oldVal) {
+              if(newVal>oldVal) {
+                this.form.sum = this.form.sum + 20.75;
+              } else {
+                this.form.sum = this.form.sum - 20.75;
+              }
+          }
       }
   },
   computed: {
-    ...mapGetters(['proposalsData', 'lastProposalsId']),
+    ...mapGetters(['currentProposalsData', 'lastProposalsId']),
     getProposalId() {
-      return this.proposalsData[0]?.id;
+      return this.currentProposalsData && this.currentProposalsData?.id;
     }
   },
   methods: {
@@ -419,6 +430,7 @@ export default {
     },
     fulledData(id) {
       this.getCurrentProposal(id).then(response => {
+        console.log(response);
         this.form = response;
       })
     },
@@ -452,7 +464,7 @@ export default {
         this.generateProposalPDF(id)
     }
   },
-  mounted() {
+  created() {
     if(this.current_invent) {
       this.fulledData(this.current_invent);
     } else {
@@ -467,6 +479,22 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
 
+  .link {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+
+    &:hover {
+      color: #fff;
+      background-color: #0069d9;
+      border-color: #0062cc;
+      text-decoration: none
+    }
+  }
 </style>

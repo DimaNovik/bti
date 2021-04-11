@@ -19,4 +19,10 @@ Route::get('/admin', function () {
     return view('welcome');
 });
 
-Route::get('/admin/proposals/find_for_pdf/{id}', 'api\V1\ProposalsController@findForPDF');
+
+Route::group(['prefix' => '/admin', 'namespace' => 'Api\V1', 'as' => 'api.'], function () {
+    Route::get('proposals/find_for_pdf/{id}', 'ProposalsController@findForPDF');
+});
+
+
+

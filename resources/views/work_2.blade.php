@@ -16,13 +16,13 @@
 <p style='font-size:11px;text-align:center;line-height:11px;'><strong>Комунальне підприємство &ldquo;Бюро технічної інвентаризації&rdquo; Одеської міської ради</strong></p>
 <p style='font-size:11px;text-align:center;line-height:11px;'>Замовлення-зобов&apos;язання № {{$code}} від {{$created_at}} на суму {{$sum}} грн.</p>
 <p style='font-size:11px;line-height:11px;'>{{$personal_data}}, надалі іменується &ldquo;Замовник&rdquo;, та Комунальне підприємство &ldquo;Бюро технічної інвентаризації&rdquo; Одеської міської ради, надалі іменується &ldquo;Виконавець&rdquo; (а разом - Сторони) уклали цей договір про наступне.</p>
-<p style='font-size:11px;line-height:11px;'>1. Виконавець бере на себе зобов&apos;язання виконати вид роботи <strong>&ldquo;Відповідь щодо наявності зареєстрованого права власності стосовно фізичних осіб&rdquo;</strong> за: {{$personal_data}} або за адресою: {{$city}} {{$address}} {{$house_number}} {{$house_building}} {{$apartment}} {{$office}} у <strong>термін визначений замовником</strong>.</p>
+<p style='font-size:11px;line-height:11px;'>1. Виконавець бере на себе зобов&apos;язання виконати вид роботи <strong>&ldquo;Відповідь щодо наявності зареєстрованого права власності стосовно юридичних осіб&rdquo;</strong> за: {{$personal_data}} або за адресою: {{$city}} {{$address}} {{$house_number}} {{$house_building}} {{$apartment}} {{$office}} у <strong>термін визначений замовником</strong>.</p>
 <p style='font-size:11px;line-height:11px;'>2. Замовник зобов&apos;язується сплатити Виконавцю за виконання роботи, що надається згідно з пунктом 1 цього замовлення у розмірі {{$sum}} грн.</p>
 <p style='font-size:11px;line-height:11px;'>3. Виконавець має право отримувати від замовника необхідну документацію для надання послуг за цим договором, а саме: правовстановлювальні документи та їх засвідчені копії, а також інші документи визначені законодавством України.&nbsp;</p>
 <p style='font-size:11px;line-height:11px;'>4. Відповідність за достовірність та повноту інформації, наданої відповідно до цього договору, несе Замовник.</p>
 <p style='font-size:11px;line-height:11px;'>5. Замовник своїм підписом засвідчує, що подані їм документи для укладення договору про надання послуг та подальшого зберігання згідні з оригіналом, у чому він розписується.</p>
 <p style='font-size:11px;line-height:11px;'>6. Термін надання послуг при застосуванні коефіцієнту 1 до розрахункової вартості затрачених норм часу складає один місяць.</p>
-<p style='font-size:11px;line-height:11px;'>7. Замовник надає згоду на скорочення терміну надання послуг за домовленістю Сторін та застосування коефіцієнту 2 до розрахункової вартості затрачених норм часу для фізичних осіб за 3 робочих дні, для юридичних осіб за 10 діб.</p>
+<p style='font-size:11px;line-height:11px;'>7. Замовник надає згоду на скорочення терміну надання послуг за домовленістю Сторін та застосування коефіцієнту 2 до розрахункової вартості затрачених норм часу для юридичних осіб за 3 робочих дні, для юридичних осіб за 10 діб.</p>
 <p style='font-size:11px;line-height:11px;'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Замовник_________________________________&nbsp;</p>
 <p style='font-size:11px;line-height:11px;'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;(підпис Замовника)</p>
 <p style='font-size:11px;line-height:11px;'>8. За письмовою заявою Замовника повернення оплачених коштів здійснюється:</p>
@@ -45,31 +45,12 @@
 <p style='font-size:11px;line-height:11px; text-align:center;'>№ {{$code}} від {{$created_at}}</p>
 <p style='font-size:11px;line-height:11px;'><strong>Адреса:</strong> {{$city}} {{$address}} {{$house_number}} {{$house_building}} {{$apartment}} {{$office}}</p>
 <p style='font-size:11px;line-height:11px;'><strong>Замовник:</strong> {{$personal_data}}</p>
-<p style='font-size:11px;line-height:11px;'><strong>Вид робіт:</strong> <strong>&ldquo;Відповідь щодо наявності зареєстрованого права власності стосовно фізичних осіб&rdquo;.</strong></p>
+<p style='font-size:11px;line-height:11px;'><strong>Вид робіт:</strong> <strong>&ldquo;Відповідь щодо наявності зареєстрованого права власності стосовно юридичних осіб&rdquo;.</strong></p>
 <p style='font-size:11px;line-height:11px;'><strong><span style="color:#333333;">Сума:</span></strong> {{$sum}}<span style="color:#333333;">&nbsp;грн.</span></p>
-
-<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">Я,&nbsp;</span>{{$personal_data}}, надалі іменується &ldquo;Замовник&rdquo;, що ознайомлений(а) з вимогами Закону України &ldquo;Про захист персональних даних&rdquo;, надаю згоду Комунальному підприємству &ldquo;Бюро технічної інвентаризації&rdquo; Одеської міської ради, надалі іменується &ldquo;Виконавець&rdquo;, на збір та обробку моїх персональних особистих даних, з метою забезпечення вимог чинного законодавства про державну реєстрацію прав власності, інших майнових прав та їх обтяжень.</p>
-<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Мені роз&rsquo;яснено, що відповідно до статті 8 Закону України &ldquo;Про захист персональних даних&rdquo; я маю право:</span></p>
-<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">1) знати про джерела збирання, місцезнаходження своїх персональних даних, мету їх обробки, місцезнаходження або місце проживання (перебування) володільця чи розпорядника персональних даних або дати відповідне доручення щодо отримання цієї інформації уповноваженим ним особам, крім випадків, встановлених законом;</span></p>
-<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">2) отримувати інформацію про умови надання доступу до персональних даних, зокрема інформацію про третіх осіб, яким передаються його персональні дані;</span></p>
-<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">3) на доступ до своїх персональних даних;</span></p>
-<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">4) отримувати не пізніш як за тридцять календарних днів з дня надходження запиту, крім випадків, передбачених законом, відповідь про те, чи обробляються його персональні дані, а також отримувати зміст таких персональних даних;</span></p>
-<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">5) пред&rsquo;являти вмотивовану вимогу володільцю персональних даних із запереченням проти обробки своїх персональних даних;</span></p>
-<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">6) пред&apos;являти вмотивовану вимогу щодо зміни або знищення своїх персональних даних будь-яким володільцем та розпорядником персональних даних, якщо ці дані обробляються незаконно чи є недостовірними;</span></p>
-<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">7) на захист своїх персональних даних від незаконної обробки та випадкової втрати, знищення, пошкодження у зв&apos;язку з умисним приховуванням, ненаданням чи несвоєчасним їх наданням, а також на захист від надання відомостей, що є недостовірними чи ганьблять честь, гідність та ділову репутацію фізичної особи;</span></p>
-<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">8) звертатися із скаргами на обробку своїх персональних даних до Уповноваженого або до суду;</span></p>
-<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">9) застосовувати засоби правового захисту в разі порушення законодавства про захист персональних даних;</span></p>
-<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">10) вносити застереження стосовно обмеження права на обробку своїх персональних даних під час надання згоди;</span></p>
-<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">11) відкликати згоду на обробку персональних даних;</span></p>
-<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">12) знати механізм автоматичної обробки персональних даних;</span></p>
-<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">13) на захист від автоматизованого рішення, яке має для нього правові наслідки,</span></p>
-<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">тому зобов&rsquo;язую Виконавця зберігати свої персональні дані та забороняю їх передавати будь-куди або будь-кому.</span></p>
-<p style='font-size:6px;line-height:6px; margin: 0;text-align:center;'><span style="font-size:6px;line-height:6px;">______________________________</span>{{$personal_data}}</p>
-<p style='font-size:6px;line-height:6px; margin: 0;text-align:center;'><span style="font-size:6px;line-height:6px;">(підпис, ПІБ Замовника)</span></p>
-<p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;font-size:6px;">&nbsp;</span></p>
-<p style='font-size:6px;font-size:6px; margin: 0;text-align:center;'><span style="font-size:6px;font-size:6px;">Акт виконаних робіт</span></p>
-<p style='font-size:6px;font-size:6px; margin: 0;text-align:center;'><span style="font-size:6px;font-size:6px;">договір №&nbsp;</span>{{$code}}<span style="font-size:6px;">&nbsp;від {{$created_at}}&nbsp;</span><span style="font-size:6px;">на суму&nbsp;</span>{{$sum}}<span style="font-size:6px;">&nbsp;грн.</span></p>
-<p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;">Ми, що нижче підписались, Замовник&nbsp;</span>{{$personal_data}}<span style="font-size:6px;font-size:6px;">, з однієї сторони та Виконавець з іншої сторони, склали цей Акт в тому, що Виконавцем повністю та в строк повинен виконати вид роботи &ldquo;Відповідь щодо наявності зареєстрованого права власності стосовно фізичних осіб&rdquo;, згідно з договором №&nbsp;</span>{{$code}}<span style="font-size:6px;">&nbsp;від {{$created_at}}&nbsp;</span><span style="font-size:6px;">на суму&nbsp;</span>{{$sum}}<span style="font-size:6px;">&nbsp;грн.</span></p>
+<p style='font-size:11px;line-height:11px;'>&nbsp;</p>
+<p style='font-size:8px; margin: 0;text-align:center;'><span style="font-size:8px;">Акт виконаних робіт</span></p>
+<p style='font-size:8px; margin: 0;text-align:center;'><span style="font-size:8px;">договір №&nbsp;</span>{{$code}}<span style="font-size:8px;">&nbsp;від {{$created_at}}&nbsp;</span><span style="font-size:8px;">на суму&nbsp;</span>{{$sum}}<span style="font-size:8px;">&nbsp;грн.</span></p>
+<p style='font-size:8px; margin: 0;'><span style="font-size:8px;">Ми, що нижче підписались, Замовник&nbsp;</span>{{$personal_data}}<span style="font-size:8px;">, з однієї сторони та Виконавець з іншої сторони, склали цей Акт в тому, що Виконавцем повністю та в строк повинен виконати вид роботи &ldquo;Відповідь щодо наявності зареєстрованого права власності стосовно юридичних осіб&rdquo;, згідно з договором №&nbsp;</span>{{$code}}<span style="font-size:8px;">&nbsp;від {{$created_at}}&nbsp;</span><span style="font-size:8px;">на суму&nbsp;</span>{{$sum}}<span style="font-size:8px;">&nbsp;грн.</span></p>
 
 @php
 $f17 = 0.099;
@@ -80,11 +61,10 @@ $h11 = 0.050;
 $h12 = 0.079;
 $h13 = 0.060;
 $h14 = 0.1;
-$h15 = 0.334;
 $h16 = 0.850;
 $h17 = ($f17+$g17) * $additionally;
 $h18 = $copyes * 0.005;
-$h19 = $h9 + $h10 + $h11 + $h12 + $h13 + $h14 + $h15 + $h16 + $h17 + $h18;
+$h19 = $h9 + $h10 + $h11 + $h12 + $h13 + $h14 + $h16 + $h17 + $h18;
 $i19 = round(151.69 * $h19, 2);
 $i20 = round($i19 * 0.2, 2);
 $i21 = round($i19 + $i20, 2);
@@ -306,38 +286,8 @@ $i21 = round($i19 + $i20, 2);
             <td style="height:11.85pt;border:none;"><br></td>
         </tr>
         <tr>
-            <td style="border:solid black 1.0pt;border-top:  none;height:  6.55pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">7</span></p>
-            </td>
-            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;height:6.55pt;">
-                <p style='font-size:6px;'><span style='font-size:6px; line-height: 6px;color:black;'>Обробка персональних даних</span></p>
-            </td>
-            <td style="border-top:none;border-left:none;border-bottom:  solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:6.55pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">3.19</span></p>
-            </td>
-            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:6.55pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>Замовлення</span></p>
-            </td>
-            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:6.55pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>1</span></p>
-            </td>
-            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:6.55pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>0,334</span></p>
-            </td>
-            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:6.55pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>&nbsp;</span></p>
-            </td>
-            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:6.55pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>0,334</span></p>
-            </td>
-            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:6.55pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>{{$h15}}</span></p>
-            </td>
-            <td style="height:6.55pt;border:none;"><br></td>
-        </tr>
-        <tr>
             <td style="border:solid black 1.0pt;border-top:  none;height:  25.15pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">8</span></p>
+                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">7</span></p>
             </td>
             <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;height:25.15pt;">
                 <p style='font-size:6px;'><span style='font-size:6px; line-height: 6px;color:black;'>Формування, друкування та видання довідки про наявність зареєстрованого права власності на об&rsquo;єкт нерухомості на одне прізвище</span></p>
@@ -367,7 +317,7 @@ $i21 = round($i19 + $i20, 2);
         </tr>
         <tr>
             <td style="border:solid black 1.0pt;border-top:  none;height:  10.7pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">9</span></p>
+                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">8</span></p>
             </td>
             <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;height:10.7pt;">
                 <p style='font-size:6px;'><span style='font-size:6px; line-height: 6px;color:black;'>Додатково за кожну наступну позицію</span></p>
@@ -395,7 +345,7 @@ $i21 = round($i19 + $i20, 2);
         </tr>
         <tr>
             <td style="border:solid black 1.0pt;border-top:  none;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">10</span></p>
+                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">9</span></p>
             </td>
             <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;height:13.65pt;">
                 <p style='font-size:6px;'><span style='font-size:6px; line-height: 6px;color:black;'>Зняття копій шляхом застосування копіювальної техніки</span></p>
@@ -488,14 +438,12 @@ $i21 = round($i19 + $i20, 2);
     </tbody>
     </table>
 
-    <p style='font-size:11px; margin: 0; margin-top: 10px;'><span style="font-size:11px;">(підпис Замовника)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(підпис Виконавця)</span></p>
 
-
-    <p style='font-size:11px; margin: 0;'>{{$personal_data}}<span style="font-size:11px;">&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; </span><span style="font-size:11px;">директора Швець Н.В.</span></p>
+<p style='font-size:11px; margin: 0; margin-top: 10px;'><span style="font-size:11px;">(підпис Замовника)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(підпис Виконавця)</span></p>
+<p style='font-size:11px; margin: 0;'>{{$personal_data}}<span style="font-size:11px;">&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; </span><span style="font-size:11px;">директора Швець Н.В.</span></p>
 <p style='font-size:11px; margin: 0;'><span style="font-size:11px;">_________________________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;_________________________</span></p>
 <p style='font-size:11px; margin: 0;'><span style="font-size:11px;">Послуги прийняв&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Послуги здав Виконавець в особі</span></p>
 <p style='font-size:11px;'>&nbsp;</p>
-
 
 
 </body>

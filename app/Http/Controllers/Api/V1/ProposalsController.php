@@ -102,12 +102,29 @@ class ProposalsController extends Controller
         $proposals =  bti_proposals::findOrFail($id);
 
         $data = [
-            'id' => $proposals[0]['id'],
+            'code' => $proposals['code'], 
+            'sum' => $proposals['sum'], 
+            'copyes' => $proposals['copyes'], 
+            'type' => $proposals['type'], 
+            'person' => $proposals['person'], 
+            'personal_data' => $proposals['personal_data'], 
+            'address' => $proposals['address'], 
+            'city' => $proposals['city'], 
+            'house_number' => $proposals['house_number'], 
+            'house_building' => $proposals['house_building'], 
+            'apartment' => $proposals['apartment'], 
+            'office' => $proposals['office'], 
+            'status' => $proposals['status'], 
+            'additionally' => $proposals['additionally'], 
+            'coefiction' => $proposals['coefiction'], 
+            'created_at' => substr($proposals['created_at'], 0, -9), 
+            'updated_at' => substr($proposals['updated_at'], 0, -9),
         ];
 
-        $pdf = PDF::loadView('work_1', $data);
 
-        return $pdf->download("work_1.pdf");
+        $pdf = PDF::loadView('work_'.$proposals['type'], $data);
+
+        return $pdf->download('work_'.$proposals['type']. '.pdf');
     
     }
 

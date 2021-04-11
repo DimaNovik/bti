@@ -110,6 +110,7 @@ export default {
         '№ кв.': 'apartment',
         '№ приміщення': 'office',
         'Статус': 'status',
+        'Коефіціент': 'coefiction',
         'Дата створення': 'created_at',
         'Дата статусу': 'updated_at',
       },
@@ -140,7 +141,7 @@ export default {
         },
         {
           key: "personal_data",
-          label: "Персональні дані",
+          label: "ПІБ замовника/назва юридичної особи",
           sortable: true
         },
         {
@@ -169,13 +170,23 @@ export default {
           sortable: true
         },
         {
-          key: "office_number",
+          key: "office",
           label: "№ приміщення",
           sortable: true
         },
         {
           key: "status",
           label: "Статус",
+          sortable: true
+        },
+        {
+          key: "coefiction",
+          label: "Коефіцієнт",
+          sortable: true
+        },
+        {
+          key: "additionally",
+          label: "Додатково",
           sortable: true
         },
         {
@@ -235,5 +246,6 @@ export default {
       box-shadow: none;
     }
   }
+
 }
 </style>

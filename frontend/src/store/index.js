@@ -11,6 +11,7 @@ export default new Vuex.Store({
     allProposalsData: [],
     lastInventId: 0,
     lastProposalsId: 0,
+    currentProposalsData: [],
     user: null
   },
   mutations: {
@@ -20,6 +21,10 @@ export default new Vuex.Store({
 
     setAllProposalsData: (state, data) => {
       state.allProposalsData = data;
+    },
+
+    setCurrentProposalsData: (state, data) => {
+      state.currentProposalsData = data;
     },
 
     setLastInvent: (state, id) => {
@@ -140,11 +145,14 @@ export default new Vuex.Store({
 
       commit('setAllProposalsData', data);
     },
-    async getCurrentProposal(_, id) {
+    async getCurrentProposal({commit}, id) {
       let {data} = await rest({
         method: 'get',
         url:`proposals/${id}`
       });
+
+      commit('setCurrentProposalsData', data);
+
       return data;
     },
     async createProposal(_, params) {
@@ -187,6 +195,7 @@ export default new Vuex.Store({
   getters: {
     inventoriesData: (state) =>  state.allData,
     proposalsData: (state) =>  state.allProposalsData,
+    currentProposalsData: (state) =>  state.currentProposalsData,
     lastInventId: (state) =>  state.lastInventId.toString(),
     lastProposalsId: (state) =>  state.lastProposalsId.toString(),
     user: (state) =>  state.user,
