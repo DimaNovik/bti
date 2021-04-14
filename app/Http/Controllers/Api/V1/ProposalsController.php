@@ -16,7 +16,7 @@ class ProposalsController extends Controller
      */
     public function index()
     {
-        return bti_proposals::all();
+        return bti_proposals::orderBy('id', 'desk')->get();
     }
 
     /**

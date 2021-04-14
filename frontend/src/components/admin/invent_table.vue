@@ -97,6 +97,7 @@ export default {
         'Район': 'district',
         'Тип об\'єкту': 'type_object',
         'ПІБ замовника/назва юридичної особи': 'info',
+        'Суб\'єкт господарювання': 'subject',
         'Адреса': 'address',
         '№ будинку': 'house_number',
         '№ квартири': 'apartment',
@@ -129,6 +130,10 @@ export default {
         {
           key: "info",
           label: "ПІБ замовника/назва юридичної особи",
+        },
+        {
+          key: "subject",
+          label: "Суб'єкт господарювання",
         },
         {
           key: "address",

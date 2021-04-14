@@ -46,21 +46,21 @@
           <transition appear name="fade">
             <b-row>
               <b-col cols="12">
-                <b-card class="mt-3" header="Інвентаризаціїна справа передана до КП «БТІ» (зберігання)"  v-if="result.length > 0">
+                <b-card class="mt-3" header='Інвентаризаціїна справа передана на зберігання до КП "БТІ" ОМР'  v-if="result.length > 0">
                   <p class="home__info_text"><span class="underlined"><b>{{ getOrderDate }}</b></span>
-                    за об'єктом нерухомого майна за адресою:
+                    на об'єкт нерухомого майна за адресою:
                   </p>
                   <p class="home__info_text"><span class="underlined">
-                    <b>м. Одеса {{ getResult.address }} буд. {{ getResult.house_number }},
-                      <span v-if="getResult.house_building">корп. {{getResult.house_building}}</span>
-                      кв. {{ getResult.apartment }} <span v-if="getResult.office_number">офіс: {{getResult.office_number}}</span>
+                    <b>м. Одеса {{ getResult.address }} буд. {{ getResult.house_number }}
+                      <span v-if="getResult.house_building">, корп. {{getResult.house_building}}</span>
+                      <span v-if="getResult.apartment">, {{ getResult.apartment }}</span> <span v-if="getResult.office_number">офіс: {{getResult.office_number}}</span>
                     </b>
                   </span>
                   </p>
                   <p class="home__info_text">Площа загальна: <b>{{ getResult.total_area }}м<sup>2</sup></b></p>
                   <p class="home__info_text">Площа житлова: <b>{{ getResult.main_area }}м<sup>2</sup></b></p>
                   <p class="home__info_text">Площа земельної ділянки: <b>{{ getResult.land_area }}м<sup>2</sup></b></p>
-                  <p class="home__info_text">Поверхи: <b>{{ getResult.floor }}</b></p>
+                  <p class="home__info_text">Поверхи/На якому поверсі: <b>{{ getResult.floor }}</b></p>
                 </b-card>
                 <p class="home__info_error" v-if="error">Інвентаризаціїна справа не знайдена</p>
               </b-col>
@@ -101,7 +101,6 @@ export default {
     findOrder() {
       this.error = false;
       this.result = [];
-      this.$refs.invisibleRecaptcha.execute()
       this.findInventories(this.code).then(response => {
         if (response.length > 0) {
           this.result = response;
@@ -114,12 +113,6 @@ export default {
     },
     formatNumber(e) {
       return String(e).substring(0, 9);
-    },
-    onVerify: function (response) {
-      console.log('Verify: ' + response)
-    },
-    onExpired: function () {
-      console.log('Expired')
     },
   }
 }

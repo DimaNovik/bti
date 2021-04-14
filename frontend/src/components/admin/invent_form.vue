@@ -71,10 +71,17 @@
                     max-rows="6"
                 ></b-form-textarea>
               </b-col>
+              <b-col>
+                <b-form-textarea
+                    id="textarea"
+                    v-model="form.subject"
+                    placeholder="Суб'єкт господарювання, який здійснив останню інвентаризацію об'єкта"
+                    rows="3"
+                    size="lg"
+                    max-rows="6"
+                ></b-form-textarea>
+              </b-col>
             </b-row>
-
-            
-
             <b-row class="mt-3">
               <b-col cols="4">
                 <b-form-group
@@ -267,7 +274,8 @@ export default {
         floor: 1,
         status: 0,
         info: null,
-        pages: 0
+        pages: 0,
+        subject: null
       },
       districts: [
         {text: 'Оберіть район', value: null},
@@ -276,7 +284,7 @@ export default {
         {text: 'Малиновський', value: 3},
         {text: 'Суворовський', value: 4}
       ],
-      type_object: [{text: 'Оберіть тип об\'єкту', value: null}, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      type_object: [{text: 'Оберіть тип об\'єкту', value: null}, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
       total: 0,
     }
   },
@@ -357,7 +365,7 @@ export default {
       let id = this.lastInventId;
 
       if(id.length < 10) {
-          this.form.code = `0000000${id}`
+          this.form.code = `00000000${id}`
       } else if (id.length >= 10 && id.length < 100) {
           this.form.code = `0000000${id}`
       } else if (id.length >= 100 && id.length < 1000) {

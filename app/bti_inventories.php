@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class bti_inventories extends Model
 {
-    protected $fillable = ['code', 'district', 'type_object', 'address', 'house_number', 'house_building', 'apartment', 'office_number', 'total_area', 'main_area', 'land_area', 'floor', 'status','info', 'pages', 'created_at', 'updated_at'];
+    protected $fillable = ['code', 'district', 'type_object', 'address', 'house_number', 'house_building', 'apartment', 'office_number', 'total_area', 'main_area', 'land_area', 'floor', 'status','info', 'pages', 'subject', 'created_at', 'updated_at'];
 
     public static function create($fields)
     {

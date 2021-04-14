@@ -246,41 +246,7 @@
 <script>
 import {mapActions, mapGetters} from "vuex";
 
-export default {
-  name: 'ProposalsForm',
-  data() {
-    return {
-      form: {
-        code: '',
-        sum: null,
-        copyes: 0,
-        type: null,
-        person: 1,
-        personal_data: null,
-        address: null,
-        city: null,
-        house_number: null,
-        house_building: null,
-        apartment: null,
-        office: null,
-        status: 0,
-        pages: 0,
-        coefiction: 1,
-        additionally: 0,
-      },
-      types_work: [
-        {text: 'Оберіть тип роботи', value: null},
-        {text: 'Відповідь щодо наявності зареєстрованого права власності стосовно фізичних осіб', value: 1},
-        {text: 'Відповідь щодо наявності зареєстрованого права власності стосовно юридичних осіб', value: 2},
-        {text: 'Підготовка відповіді щодо технічних показників об\'єкту нерухомості для фізичних осіб', value: 4},
-        {text: 'Підготовка відповіді щодо технічних показників об\'єкту нерухомості для юридичних осіб', value: 5},
-        {text: 'Надання копій з інвентаризаційної або реєстраційної справи стосовно фізичних осіб', value: 6},
-        {text: 'Надання копій з інвентаризаційної або реєстраційної справи стосовно юридичних осіб', value: 7},
-        {text: 'Проставлення штампу у домовій книзі', value: 9},
-        {text: 'Приймання на зберігання інвентаризаційної справи  при первинній інвентаризації', value: 10},
-        {text: 'Приймання на зберігання інвентаризаційної справи  при поточній інвентаризації', value: 11},
-      ],
-      type_work_sum: [
+const TYPE_WORK_SUM = [
         {
           id: 1,
           sum: 495.48
@@ -317,9 +283,47 @@ export default {
           id: 11,
           sum: 331.48
         },
+      ];
+
+
+export default {
+  name: 'ProposalsForm',
+  data() {
+    return {
+      form: {
+        code: '',
+        sum: null,
+        copyes: 0,
+        type: null,
+        person: 1,
+        personal_data: null,
+        address: null,
+        city: null,
+        house_number: null,
+        house_building: null,
+        apartment: null,
+        office: null,
+        status: 0,
+        pages: 0,
+        coefiction: 1,
+        additionally: 0,
+      },
+      types_work: [
+        {text: 'Оберіть тип роботи', value: null},
+        {text: 'Відповідь щодо наявності зареєстрованого права власності стосовно фізичних осіб', value: 1},
+        {text: 'Відповідь щодо наявності зареєстрованого права власності стосовно юридичних осіб', value: 2},
+        {text: 'Підготовка відповіді щодо технічних показників об\'єкту нерухомості для фізичних осіб', value: 4},
+        {text: 'Підготовка відповіді щодо технічних показників об\'єкту нерухомості для юридичних осіб', value: 5},
+        {text: 'Надання копій з інвентаризаційної або реєстраційної справи стосовно фізичних осіб', value: 6},
+        {text: 'Надання копій з інвентаризаційної або реєстраційної справи стосовно юридичних осіб', value: 7},
+        {text: 'Проставлення штампу у домовій книзі', value: 9},
+        {text: 'Приймання на зберігання інвентаризаційної справи  при первинній інвентаризації', value: 10},
+        {text: 'Приймання на зберігання інвентаризаційної справи  при поточній інвентаризації', value: 11},
       ],
+    
       total: 0,
-      sumCopyes: 0.91
+      sumCopyes: 0.91,
+      dataLoaded: false
     }
   },
   props: {
@@ -331,39 +335,51 @@ export default {
       'form.type': {
         immediate: false,
         handler(newVal) {
-          this.form.sum = this.type_work_sum.find(item => item.id === newVal).sum;
-      
+          if(!this.dataLoaded) {
+            this.form.sum = TYPE_WORK_SUM.find(item => item.id === newVal).sum;
+          }
         }
-      
+     
       },
-      'form.copyes'(newVal, oldVal) {
-          if(newVal != oldVal) {
+      'form.copyes': {
+        immediate: false,
+        handler(newVal, oldVal) {
+         if(newVal != oldVal && !this.dataLoaded) {
               if(newVal>oldVal) {
                 this.form.sum = parseFloat((this.form.sum + this.sumCopyes).toFixed(10));
               } else {
                 this.form.sum = parseFloat((this.form.sum - this.sumCopyes).toFixed(10));
               }
           }
+        }
+      
       },
-      'form.coefiction'(newVal, oldVal) {
-          if(newVal != oldVal) {
+      'form.coefiction': {
+        immediate: false,
+        handler(newVal, oldVal) {
+          if(newVal != oldVal && !this.dataLoaded) {
               if(newVal>oldVal) {
                 this.form.sum = this.form.sum * 2;
               } else {
                 this.form.sum = this.form.sum / 2;
               }
           }
+        }
+      
       },
-      'form.additionally'(newVal, oldVal) {
-    
-         if(newVal != oldVal) {
+      'form.additionally': {
+        immediate: false,
+        handler(newVal, oldVal) {
+          if(newVal != oldVal && !this.dataLoaded) {
               if(newVal>oldVal) {
                 this.form.sum = this.form.sum + 20.75;
               } else {
                 this.form.sum = this.form.sum - 20.75;
               }
           }
-      }
+        }
+      
+      },
   },
   computed: {
     ...mapGetters(['currentProposalsData', 'lastProposalsId']),
@@ -430,8 +446,12 @@ export default {
     },
     fulledData(id) {
       this.getCurrentProposal(id).then(response => {
-        console.log(response);
         this.form = response;
+        this.dataLoaded = true;
+
+        setTimeout(() => {
+          this.dataLoaded = false;
+        }, 2000)
       })
     },
     backToTable() {
@@ -441,7 +461,7 @@ export default {
       let id = this.lastProposalsId;
 
       if(id.length < 10) {
-          this.form.code = `0000000${id}`
+          this.form.code = `00000000${id}`
       } else if (id.length >= 10 && id.length < 100) {
           this.form.code = `0000000${id}`
       } else if (id.length >= 100 && id.length < 1000) {
@@ -464,7 +484,7 @@ export default {
         this.generateProposalPDF(id)
     }
   },
-  created() {
+  mounted() {
     if(this.current_invent) {
       this.fulledData(this.current_invent);
     } else {
