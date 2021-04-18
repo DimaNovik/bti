@@ -221,6 +221,22 @@
               </b-col>
               <b-col cols="12" md="4">
                 <b-form-group
+                    id="input-group-10"
+                    label="На якому поверсі"
+                    label-for="input-10"
+                    label-align="left"
+                >
+                  <b-form-input
+                      id="input-10"
+                      v-model="form.current_floor"
+                      type="number"
+                      placeholder="1"
+                      size="lg"
+                  ></b-form-input>
+                </b-form-group>
+              </b-col>
+              <b-col cols="12" md="4">
+                <b-form-group
                     id="input-group-11"
                     label="Кількість сторінок"
                     label-for="input-11"
@@ -364,23 +380,23 @@ export default {
     getCurrentCode() {
       let id = this.lastInventId;
 
-      if(id.length < 10) {
+      if(id < 10) {
           this.form.code = `00000000${id}`
-      } else if (id.length >= 10 && id.length < 100) {
+      } else if (id >= 10 && id < 100) {
           this.form.code = `0000000${id}`
-      } else if (id.length >= 100 && id.length < 1000) {
+      } else if (id >= 100 && id < 1000) {
           this.form.code = `000000${id}`
-      } else if (id.length >= 1000 && id.length < 10000) {
+      } else if (id >= 1000 && id < 10000) {
           this.form.code = `00000${id}`
-      } else if (id.length >= 10000 && id.length < 100000) {
+      } else if (id >= 10000 && id < 100000) {
           this.form.code = `0000${id}`
-      } else if (id.length >= 100000 && id.length < 1000000) {
+      } else if (id >= 100000 && id < 1000000) {
           this.form.code = `000${id}`
-      } else if (id.length >= 1000000 && id.length < 10000000) {
+      } else if (id >= 1000000 && id < 10000000) {
           this.form.code = `00${id}`
-      } else if (id.length >= 10000000 && id.length < 100000000) {
+      } else if (id >= 10000000 && id < 100000000) {
           this.form.code = `0${id}`
-      } else if (id.length >= 100000000 && id.length < 1000000000) {
+      } else if (id >= 100000000 && id < 1000000000) {
           this.form.code = `${id}`
       }
     }

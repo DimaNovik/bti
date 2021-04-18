@@ -107,6 +107,7 @@ export default {
         'Площа житлова': 'main_area',
         'Площа зем. ділянки': 'land_area',
         'Поверхів': 'floor',
+        'На якому поверсі': 'current_floor',
         'Статус': 'status',
         'Сторінок': 'pages',
         'Дата створення': 'created_at',
@@ -179,6 +180,11 @@ export default {
         {
           key: "floor",
           label: "Поверхів",
+          sortable: true
+        },
+        {
+          key: "current_floor",
+          label: "На якому поверсі",
           sortable: true
         },
         {

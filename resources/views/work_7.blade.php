@@ -16,7 +16,7 @@
 <p style='font-size:11px;text-align:center;line-height:11px;'><strong>Комунальне підприємство &ldquo;Бюро технічної інвентаризації&rdquo; Одеської міської ради</strong></p>
 <p style='font-size:11px;text-align:center;line-height:11px;'>Замовлення-зобов&apos;язання № {{$code}} від {{$created_at}} на суму {{$sum}} грн.</p>
 <p style='font-size:11px;line-height:11px;'>{{$personal_data}}, надалі іменується &ldquo;Замовник&rdquo;, та Комунальне підприємство &ldquo;Бюро технічної інвентаризації&rdquo; Одеської міської ради, надалі іменується &ldquo;Виконавець&rdquo; (а разом - Сторони) уклали цей договір про наступне.</p>
-<p style='font-size:11px;line-height:11px;'>1. Виконавець бере на себе зобов&apos;язання виконати вид роботи <strong>&ldquo;Відповідь щодо наявності зареєстрованого права власності стосовно юридичних осіб&rdquo;</strong> за: {{$personal_data}} або за адресою: {{$city}} {{$address}} {{$house_number}} {{$house_building}} {{$apartment}} {{$office}} у <strong>термін визначений замовником</strong>.</p>
+<p style='font-size:11px;line-height:11px;'>1. Виконавець бере на себе зобов&apos;язання виконати вид роботи <strong>&ldquo;Надання копій з інвентаризаційної або реєстраційної справи стосовно юридичних осіб&rdquo;</strong> за: {{$personal_data}} або за адресою: {{$city}} {{$address}} {{$house_number}} {{$house_building}} {{$apartment}} {{$office}} у <strong>термін визначений замовником/ у термін виконання п’ять робочих днів для суб’єктів господарювання у сфері технічної інвентаризації</strong>.</p>
 <p style='font-size:11px;line-height:11px;'>2. Замовник зобов&apos;язується сплатити Виконавцю за виконання роботи, що надається згідно з пунктом 1 цього замовлення у розмірі {{$sum}} грн.</p>
 <p style='font-size:11px;line-height:11px;'>3. Виконавець має право отримувати від замовника необхідну документацію для надання послуг за цим договором, а саме: правовстановлювальні документи та їх засвідчені копії, а також інші документи визначені законодавством України.&nbsp;</p>
 <p style='font-size:11px;line-height:11px;'>4. Відповідність за достовірність та повноту інформації, наданої відповідно до цього договору, несе Замовник.</p>
@@ -34,6 +34,7 @@
 <p style='font-size:11px;line-height:11px;'>(підпис Замовника)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(підпис Приймальника)</p>
 <p style='font-size:11px;line-height:11px;'>&nbsp;</p>
 <p style='font-size:11px;line-height:11px;'>&nbsp;</p>
+<p style='font-size:11px;line-height:11px;'>&nbsp;</p>
 
 <p style='margin-top:0cm;margin-bottom:7.5pt;margin-left:0cm;font-size:11px;'><span style="color:#333333;">&nbsp;_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ __ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ </span></p>
 <p style='font-size:11px;line-height:11px;text-align:center;'>&nbsp;Комунальне підприємство &ldquo;Бюро технічної інвентаризації&rdquo; Одеської міської ради&nbsp;</p>
@@ -44,27 +45,30 @@
 <p style='font-size:11px;line-height:11px; text-align:center;'>№ {{$code}} від {{$created_at}}</p>
 <p style='font-size:11px;line-height:11px;'><strong>Адреса:</strong> {{$city}} {{$address}} {{$house_number}} {{$house_building}} {{$apartment}} {{$office}}</p>
 <p style='font-size:11px;line-height:11px;'><strong>Замовник:</strong> {{$personal_data}}</p>
-<p style='font-size:11px;line-height:11px;'><strong>Вид робіт:</strong> <strong>&ldquo;Відповідь щодо наявності зареєстрованого права власності стосовно юридичних осіб&rdquo;.</strong></p>
+<p style='font-size:11px;line-height:11px;'><strong>Вид робіт:</strong> <strong>&ldquo;Надання копій з інвентаризаційної або реєстраційної справи стосовно юридичних осіб&rdquo;.</strong></p>
 <p style='font-size:11px;line-height:11px;'><strong><span style="color:#333333;">Сума:</span></strong> {{$sum}}<span style="color:#333333;">&nbsp;грн.</span></p>
-<p style='font-size:11px;line-height:11px;'>&nbsp;</p>
-<p style='font-size:11px;line-height:11px;'>&nbsp;</p>
-<p style='font-size:8px; margin: 0;text-align:center;'><span style="font-size:8px;">Акт виконаних робіт</span></p>
-<p style='font-size:8px; margin: 0;text-align:center;'><span style="font-size:8px;">договір №&nbsp;</span>{{$code}}<span style="font-size:8px;">&nbsp;від {{$created_at}}&nbsp;</span><span style="font-size:8px;">на суму&nbsp;</span>{{$sum}}<span style="font-size:8px;">&nbsp;грн.</span></p>
-<p style='font-size:8px; margin: 0;'><span style="font-size:8px;">Ми, що нижче підписались, Замовник&nbsp;</span>{{$personal_data}}<span style="font-size:8px;">, з однієї сторони та Виконавець з іншої сторони, склали цей Акт в тому, що Виконавцем повністю та в строк повинен виконати вид роботи &ldquo;Відповідь щодо наявності зареєстрованого права власності стосовно юридичних осіб&rdquo;, згідно з договором №&nbsp;</span>{{$code}}<span style="font-size:8px;">&nbsp;від {{$created_at}}&nbsp;</span><span style="font-size:8px;">на суму&nbsp;</span>{{$sum}}<span style="font-size:8px;">&nbsp;грн.</span></p>
-
+<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">&nbsp;</span></p>
+<p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;font-size:6px;">&nbsp;</span></p>
+<p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;font-size:6px;">&nbsp;</span></p>
+<p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;font-size:6px;">&nbsp;</span></p>
+<p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;font-size:6px;">&nbsp;</span></p>
+<p style='font-size:6px;font-size:6px; margin: 0;text-align:center;'><span style="font-size:6px;font-size:6px;">Акт виконаних робіт</span></p>
+<p style='font-size:6px;font-size:6px; margin: 0;text-align:center;'><span style="font-size:6px;font-size:6px;">договір №&nbsp;</span>{{$code}}<span style="font-size:6px;">&nbsp;від {{$created_at}}&nbsp;</span><span style="font-size:6px;">на суму&nbsp;</span>{{$sum}}<span style="font-size:6px;">&nbsp;грн.</span></p>
+<p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;">Ми, що нижче підписались, Замовник&nbsp;</span>{{$personal_data}}<span style="font-size:6px;font-size:6px;">, з однієї сторони та Виконавець з іншої сторони, склали цей Акт в тому, що Виконавцем повністю та в строк повинен виконати вид роботи &ldquo;Надання копій з інвентаризаційної або реєстраційної справи стосовно юридичних осіб&rdquo;, згідно з договором №&nbsp;</span>{{$code}}<span style="font-size:6px;">&nbsp;від {{$created_at}}&nbsp;</span><span style="font-size:6px;">на суму&nbsp;</span>{{$sum}}<span style="font-size:6px;">&nbsp;грн.</span></p>
+<p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;font-size:6px;">&nbsp;</span></p>
 @php
-$f17 = 0.099;
-$g17 = 0.015;
+$f17 = 0.307;
+$g17 = 0.065;
 $h9 = 1.17;
 $h10 = 0.079;
 $h11 = 0.050;
+$h111 = 0.101;
 $h12 = 0.079;
 $h13 = 0.060;
 $h14 = 0.1;
-$h16 = 0.850;
-$h17 = ($f17+$g17) * $additionally;
+$h17 = $f17+$g17;
 $h18 = $copyes * 0.005;
-$h19 = $h9 + $h10 + $h11 + $h12 + $h13 + $h14 + $h16 + $h17 + $h18;
+$h19 = $h9 + $h10 + $h11 + $h111 + $h12 + $h13 + $h14  + $h17 + $h18;
 $i19 = round(151.69 * $h19, 2);
 $i20 = round($i19 * 0.2, 2);
 $i21 = round($i19 + $i20, 2);
@@ -170,6 +174,36 @@ $i21 = round($i19 + $i20, 2);
                 <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">3</span></p>
             </td>
             <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:6.55pt;">
+                <p style='font-size:6px;'><span style="font-size:6px; line-height: 6px;color:black;">Підшивання у інвентаризаційну справу або брошурування копій, що видаються замовникам	3.8	Справа	1	0,101		0,101	 </span></p>
+            </td>
+            <td style="border-top:none;border-left:none;border-bottom:  solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:6.55pt;">
+                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">3.8</span></p>
+            </td>
+            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:6.55pt;">
+                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>Справа</span></p>
+            </td>
+            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:6.55pt;">
+                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>1</span></p>
+            </td>
+            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:6.55pt;">
+                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>0,101</span></p>
+            </td>
+            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:6.55pt;">
+                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>&nbsp;</span></p>
+            </td>
+            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:6.55pt;">
+                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>0,101</span></p>
+            </td>
+            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:6.55pt;">
+                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>{{$h111}}</span></p>
+            </td>
+            <td style="height:6.55pt;border:none;"><br></td>
+        </tr>
+        <tr>
+            <td style="border:solid black 1.0pt;border-top:  none;height:  6.55pt;">
+                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">4</span></p>
+            </td>
+            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:6.55pt;">
                 <p style='font-size:6px;'><span style="font-size:6px; line-height: 6px;color:black;">Таксування виконаних робіт (електронна версія)</span></p>
             </td>
             <td style="border-top:none;border-left:none;border-bottom:  solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:6.55pt;">
@@ -197,7 +231,7 @@ $i21 = round($i19 + $i20, 2);
         </tr>
         <tr>
             <td style="border:solid black 1.0pt;border-top:  none;height:  7.45pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">4</span></p>
+                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">5</span></p>
             </td>
             <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;height:7.45pt;">
                 <p style='font-size:6px;'><span style='font-size:6px; line-height: 6px;color:black;'>Видача документа замовнику</span></p>
@@ -227,7 +261,7 @@ $i21 = round($i19 + $i20, 2);
         </tr>
         <tr>
             <td style="border:solid black 1.0pt;border-top:  none;height:  7.45pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">5</span></p>
+                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">6</span></p>
             </td>
             <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;height:7.45pt;">
                 <p style='font-size:6px;'><span style='font-size:6px; line-height: 6px;color:black;'>Виписка рахунків (електронна версія)</span></p>
@@ -257,7 +291,7 @@ $i21 = round($i19 + $i20, 2);
         </tr>
         <tr>
             <td style="border:solid black 1.0pt;border-top:  none;height:  11.85pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">6</span></p>
+                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">7</span></p>
             </td>
             <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;height:11.85pt;">
                 <p style='font-size:6px;'><span style='font-size:6px; line-height: 6px;color:black;'>Складання акта виконання робіт</span></p>
@@ -286,56 +320,26 @@ $i21 = round($i19 + $i20, 2);
             <td style="height:11.85pt;border:none;"><br></td>
         </tr>
         <tr>
-            <td style="border:solid black 1.0pt;border-top:  none;height:  25.15pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">7</span></p>
-            </td>
-            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;height:25.15pt;">
-                <p style='font-size:6px;'><span style='font-size:6px; line-height: 6px;color:black;'>Формування, друкування та видання довідки про наявність зареєстрованого права власності на об&rsquo;єкт нерухомості на одне прізвище</span></p>
-            </td>
-            <td style="border-top:none;border-left:none;border-bottom:  solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:25.15pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">2.3</span></p>
-            </td>
-            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:25.15pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>Довідка</span></p>
-            </td>
-            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:25.15pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>1</span></p>
-            </td>
-            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:25.15pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>0,761</span></p>
-            </td>
-            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:25.15pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>0,089</span></p>
-            </td>
-            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:25.15pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>0,850</span></p>
-            </td>
-            <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:25.15pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>{{$h16}}</span></p>
-            </td>
-            <td style="height:25.15pt;border:none;"><br></td>
-        </tr>
-        <tr>
             <td style="border:solid black 1.0pt;border-top:  none;height:  10.7pt;">
                 <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">8</span></p>
             </td>
             <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;height:10.7pt;">
-                <p style='font-size:6px;'><span style='font-size:6px; line-height: 6px;color:black;'>Додатково за кожну наступну позицію</span></p>
+                <p style='font-size:6px;'><span style='font-size:6px; line-height: 6px;color:black;'>Складання довідки щодо технічних показників об’єкту</span></p>
             </td>
             <td style="border-top:none;border-left:none;border-bottom:  solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:10.7pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">2.3б</span></p>
+                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style="font-size:6px; line-height: 6px;color:black;">2.1</span></p>
             </td>
             <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:10.7pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>1</span></p>
+                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>Довідка</span></p>
             </td>
             <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;height:10.7pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>{{$additionally}}</span></p>
+                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>1</span></p>
             </td>
             <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:10.7pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>0,099</span></p>
+                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>0,307</span></p>
             </td>
             <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;height:10.7pt;">
-                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>0,015</span></p>
+                <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>0,065</span></p>
             </td>
             <td style="border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;height:10.7pt;">
                 <p style='font-size:6px; line-height: 6px;text-align:center;'><span style='font-size:6px; line-height: 6px;color:black;'>{{$h17}}</span></p>
@@ -437,13 +441,10 @@ $i21 = round($i19 + $i20, 2);
         </tr>
     </tbody>
     </table>
-    <p style='font-size:11px;line-height:11px;'>&nbsp;</p>
-
-<p style='font-size:11px; margin: 0;'>{{$personal_data}}<span style="font-size:11px;">&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; </span><span style="font-size:11px;">директор Швець Н.В.</span></p>
+    <p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">&nbsp;</span></p>
+    <p style='font-size:11px; margin: 0;'>{{$personal_data}}<span style="font-size:11px;">&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; </span><span style="font-size:11px;">директор Швець Н.В.</span></p>
 <p style='font-size:11px; margin: 0;'><span style="font-size:11px;">_________________________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;_________________________</span></p>
 <p style='font-size:11px; margin: 0;'><span style="font-size:11px;">Послуги прийняв&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Послуги здав Виконавець в особі</span></p>
 <p style='font-size:11px;'>&nbsp;</p>
-
-
 </body>
 </html>

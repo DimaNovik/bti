@@ -47,7 +47,9 @@
 <p style='font-size:11px;line-height:11px;'><strong>Замовник:</strong> {{$personal_data}}</p>
 <p style='font-size:11px;line-height:11px;'><strong>Вид робіт:</strong> <strong>&ldquo;Відповідь щодо наявності зареєстрованого права власності стосовно фізичних осіб&rdquo;.</strong></p>
 <p style='font-size:11px;line-height:11px;'><strong><span style="color:#333333;">Сума:</span></strong> {{$sum}}<span style="color:#333333;">&nbsp;грн.</span></p>
-
+<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">&nbsp;</span></p>
+<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">&nbsp;</span></p>
+<p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">&nbsp;</span></p>
 <p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">Я,&nbsp;</span>{{$personal_data}}, надалі іменується &ldquo;Замовник&rdquo;, що ознайомлений(а) з вимогами Закону України &ldquo;Про захист персональних даних&rdquo;, надаю згоду Комунальному підприємству &ldquo;Бюро технічної інвентаризації&rdquo; Одеської міської ради, надалі іменується &ldquo;Виконавець&rdquo;, на збір та обробку моїх персональних особистих даних, з метою забезпечення вимог чинного законодавства про державну реєстрацію прав власності, інших майнових прав та їх обтяжень.</p>
 <p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Мені роз&rsquo;яснено, що відповідно до статті 8 Закону України &ldquo;Про захист персональних даних&rdquo; я маю право:</span></p>
 <p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">1) знати про джерела збирання, місцезнаходження своїх персональних даних, мету їх обробки, місцезнаходження або місце проживання (перебування) володільця чи розпорядника персональних даних або дати відповідне доручення щодо отримання цієї інформації уповноваженим ним особам, крім випадків, встановлених законом;</span></p>
@@ -70,7 +72,7 @@
 <p style='font-size:6px;font-size:6px; margin: 0;text-align:center;'><span style="font-size:6px;font-size:6px;">Акт виконаних робіт</span></p>
 <p style='font-size:6px;font-size:6px; margin: 0;text-align:center;'><span style="font-size:6px;font-size:6px;">договір №&nbsp;</span>{{$code}}<span style="font-size:6px;">&nbsp;від {{$created_at}}&nbsp;</span><span style="font-size:6px;">на суму&nbsp;</span>{{$sum}}<span style="font-size:6px;">&nbsp;грн.</span></p>
 <p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;">Ми, що нижче підписались, Замовник&nbsp;</span>{{$personal_data}}<span style="font-size:6px;font-size:6px;">, з однієї сторони та Виконавець з іншої сторони, склали цей Акт в тому, що Виконавцем повністю та в строк повинен виконати вид роботи &ldquo;Відповідь щодо наявності зареєстрованого права власності стосовно фізичних осіб&rdquo;, згідно з договором №&nbsp;</span>{{$code}}<span style="font-size:6px;">&nbsp;від {{$created_at}}&nbsp;</span><span style="font-size:6px;">на суму&nbsp;</span>{{$sum}}<span style="font-size:6px;">&nbsp;грн.</span></p>
-
+<p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;font-size:6px;">&nbsp;</span></p>
 @php
 $f17 = 0.099;
 $g17 = 0.015;
@@ -88,7 +90,7 @@ $h19 = $h9 + $h10 + $h11 + $h12 + $h13 + $h14 + $h15 + $h16 + $h17 + $h18;
 $i19 = round(151.69 * $h19, 2);
 $i20 = round($i19 * 0.2, 2);
 $i21 = round($i19 + $i20, 2);
-@endphp;
+@endphp
 
 <table style="border: none;width: 100%; max-width: 800px;border-collapse:collapse;" align="center">
     <tbody>
@@ -487,6 +489,7 @@ $i21 = round($i19 + $i20, 2);
         </tr>
     </tbody>
     </table>
+    <p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">&nbsp;</span></p>
     <p style='font-size:11px; margin: 0;'>{{$personal_data}}<span style="font-size:11px;">&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; </span><span style="font-size:11px;">директор Швець Н.В.</span></p>
 <p style='font-size:11px; margin: 0;'><span style="font-size:11px;">_________________________________________ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;_________________________</span></p>
 <p style='font-size:11px; margin: 0;'><span style="font-size:11px;">Послуги прийняв&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Послуги здав Виконавець в особі</span></p>
