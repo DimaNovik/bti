@@ -2,8 +2,8 @@
   <b-row>
     <b-col>
       <b-container fluid>
-        <b-row class="mt-5 mb-2">
-          <b-col cols="12" md="4">
+        <b-row class="mt-5 mb-2" align-v="center">
+          <b-col cols="12" md="3">
             <b-form>
               <b-form-group
               >
@@ -17,7 +17,17 @@
               </b-form-group>
             </b-form>
           </b-col>
-          <b-col cols="12" offset-md="6" md="2" align="center">
+          <b-col cols="12" md="5">
+            <b-form-group label="Пошук за:">
+              <b-form-checkbox-group
+                id="checkbox-group-1"
+                v-model="selected"
+                :options="options"
+                name="flavour-1"
+              ></b-form-checkbox-group>
+            </b-form-group>
+          </b-col>
+          <b-col cols="12"  md="4" align="center">
             <b-button type="button" variant="danger" size="lg" @click="$emit('componentChange', 'ProposalsForm')">Додати</b-button>
           </b-col>
         </b-row>
@@ -47,6 +57,8 @@
                        :current-page="currentPage"
                        :per-page="perPage"
                        :filter="search"
+                       :filter-ignored-fields="ignoredFiedls"
+                       :filter-included-fields="selected"
                        @filtered="onFiltered"
                        @row-clicked="(item) => openToEdit(item)"
                        class="admin__table">
@@ -200,6 +212,14 @@ export default {
           sortable: true
         },
       ],
+      ignoredFiedls: ['created_at', 'updated_at', 'coefiction', 'status', 'type', 'copyes'],
+      selected: [],
+      options: [
+        { text: '№ замовлення', value: 'code' },
+        { text: 'Сума', value: 'sum' },
+        { text: 'Персональні дані', value: 'personal_data' },
+        { text: 'Адреса', value: 'address' }
+      ]
     }
   },
   computed: {

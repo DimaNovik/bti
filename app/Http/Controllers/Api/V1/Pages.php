@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\bti_inventories;
+
+use App\pages;
+use App\page_content;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class InventoriesController extends Controller
+class Pages extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +17,7 @@ class InventoriesController extends Controller
      */
     public function index()
     {
-
-        return bti_inventories::orderBy('id', 'desk')->get();
+        //
     }
 
     /**
@@ -26,7 +27,7 @@ class InventoriesController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -37,8 +38,7 @@ class InventoriesController extends Controller
      */
     public function store(Request $request)
     {
-        $inventories = bti_inventories::create($request->all());
-        return $inventories;
+        //
     }
 
     /**
@@ -49,7 +49,7 @@ class InventoriesController extends Controller
      */
     public function show($id)
     {
-        return bti_inventories::findOrFail($id);
+        //
     }
 
     /**
@@ -72,10 +72,7 @@ class InventoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $inventories = bti_inventories::findOrFail($id);
-        $inventories->update($request->all());
-
-        return $inventories;
+        //
     }
 
     /**
@@ -87,17 +84,5 @@ class InventoriesController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function find(Request $request, $id)
-    {
-        $inventories = bti_inventories::where('code', '=', intval($id))->where('status', 1)->get();
-        return $inventories;
-    }
-
-    public function findLast()
-    {
-        $inventoriesLast = bti_inventories::orderBy('id', 'desk')->first();
-        return $inventoriesLast;
     }
 }

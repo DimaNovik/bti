@@ -16,13 +16,13 @@
 <p style='font-size:11px;text-align:center;line-height:11px;'><strong>Комунальне підприємство &ldquo;Бюро технічної інвентаризації&rdquo; Одеської міської ради</strong></p>
 <p style='font-size:11px;text-align:center;line-height:11px;'>Замовлення-зобов&apos;язання № {{$code}} від {{$created_at}} на суму {{$sum}} грн.</p>
 <p style='font-size:11px;line-height:11px;'>{{$personal_data}}, надалі іменується &ldquo;Замовник&rdquo;, та Комунальне підприємство &ldquo;Бюро технічної інвентаризації&rdquo; Одеської міської ради, надалі іменується &ldquo;Виконавець&rdquo; (а разом - Сторони) уклали цей договір про наступне.</p>
-<p style='font-size:11px;line-height:11px;'>1. Виконавець бере на себе зобов&apos;язання виконати вид роботи <strong>&ldquo;Надання копій з інвентаризаційної або реєстраційної справи стосовно юридичних осіб&rdquo;</strong> за: {{$personal_data}} або за адресою: {{$city}} {{$address}} {{$house_number}} {{$house_building}} {{$apartment}} {{$office}} у <strong>термін визначений замовником/ у термін виконання п’ять робочих днів для суб’єктів господарювання у сфері технічної інвентаризації</strong>.</p>
+<p style='font-size:11px;line-height:11px;'>1. Виконавець бере на себе зобов&apos;язання виконати вид роботи <strong>&ldquo;Надання копій з інвентаризаційної або реєстраційної справи стосовно юридичних осіб&rdquo;</strong> за: {{$personal_data}} або за адресою: {{$city}} {{$address}} {{$house_number}} {{$house_building}} {{$apartment}} {{$office}} у <strong>термін визначений замовником/ у термін виконання п’ять робочих днів для суб’єктів господарювання у сфері технічної інвентаризації.</strong>.</p>
 <p style='font-size:11px;line-height:11px;'>2. Замовник зобов&apos;язується сплатити Виконавцю за виконання роботи, що надається згідно з пунктом 1 цього замовлення у розмірі {{$sum}} грн.</p>
 <p style='font-size:11px;line-height:11px;'>3. Виконавець має право отримувати від замовника необхідну документацію для надання послуг за цим договором, а саме: правовстановлювальні документи та їх засвідчені копії, а також інші документи визначені законодавством України.&nbsp;</p>
 <p style='font-size:11px;line-height:11px;'>4. Відповідність за достовірність та повноту інформації, наданої відповідно до цього договору, несе Замовник.</p>
 <p style='font-size:11px;line-height:11px;'>5. Замовник своїм підписом засвідчує, що подані їм документи для укладення договору про надання послуг та подальшого зберігання згідні з оригіналом, у чому він розписується.</p>
-<p style='font-size:11px;line-height:11px;'>6. Термін надання послуг при застосуванні коефіцієнту 1 до розрахункової вартості затрачених норм часу складає один місяць.</p>
-<p style='font-size:11px;line-height:11px;'>7. Замовник надає згоду на скорочення терміну надання послуг за домовленістю Сторін та застосування коефіцієнту 2 до розрахункової вартості затрачених норм часу для юридичних осіб за 3 робочих дні, для юридичних осіб за 10 діб.</p>
+<p style='font-size:11px;line-height:11px;'>6. Термін надання послуг при застосуванні коефіцієнту 1 складає один місяць/ у термін виконання п’ять робочих днів для суб’єктів господарювання у сфері технічної інвентаризації.</p>
+<p style='font-size:11px;line-height:11px;'>7. Замовник надає згоду на скорочення терміну надання послуг за домовленістю Сторін та застосування коефіцієнту 2 до розрахункової вартості затрачених норм часу для фізичних осіб за 3 робочих дні, для юридичних осіб за 10 діб (не стосується суб’єктів господарювання у сфері технічної інвентаризації).</p>
 <p style='font-size:11px;line-height:11px;'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Замовник_________________________________&nbsp;</p>
 <p style='font-size:11px;line-height:11px;'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;(підпис Замовника)</p>
 <p style='font-size:11px;line-height:11px;'>8. За письмовою заявою Замовника повернення оплачених коштів здійснюється:</p>
@@ -48,7 +48,6 @@
 <p style='font-size:11px;line-height:11px;'><strong>Вид робіт:</strong> <strong>&ldquo;Надання копій з інвентаризаційної або реєстраційної справи стосовно юридичних осіб&rdquo;.</strong></p>
 <p style='font-size:11px;line-height:11px;'><strong><span style="color:#333333;">Сума:</span></strong> {{$sum}}<span style="color:#333333;">&nbsp;грн.</span></p>
 <p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">&nbsp;</span></p>
-<p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;font-size:6px;">&nbsp;</span></p>
 <p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;font-size:6px;">&nbsp;</span></p>
 <p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;font-size:6px;">&nbsp;</span></p>
 <p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;font-size:6px;">&nbsp;</span></p>

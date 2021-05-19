@@ -4,9 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class bti_inventories extends Model
+class page_content extends Model
 {
-    protected $fillable = ['code', 'district', 'type_object', 'address', 'house_number', 'house_building', 'apartment', 'office_number', 'total_area', 'main_area', 'land_area', 'status','info', 'pages', 'subject', 'created_at', 'updated_at'];
+    //
+    protected $fillable = ['content'];
 
     public static function create($fields)
     {

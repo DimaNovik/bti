@@ -51,7 +51,7 @@
                     на об'єкт нерухомого майна за адресою:
                   </p>
                   <p class="home__info_text"><span class="underlined">
-                    <b>м. Одеса {{ getResult.address }} буд. {{ getResult.house_number }}
+                    <b>м. Одеса, {{ getResult.address }} буд. {{ getResult.house_number }}
                       <span v-if="getResult.house_building">, корп. {{getResult.house_building}}</span>
                       <span v-if="getResult.apartment">, {{ getResult.apartment }}</span> <span v-if="getResult.office_number">офіс: {{getResult.office_number}}</span>
                     </b>
@@ -60,7 +60,6 @@
                   <p class="home__info_text">Площа загальна: <b>{{ getResult.total_area }}м<sup>2</sup></b></p>
                   <p class="home__info_text">Площа житлова: <b>{{ getResult.main_area }}м<sup>2</sup></b></p>
                   <p class="home__info_text">Площа земельної ділянки: <b>{{ getResult.land_area }}м<sup>2</sup></b></p>
-                  <p class="home__info_text">Поверхи/На якому поверсі: <b>{{ getResult.floor }}</b></p>
                 </b-card>
                 <p class="home__info_error" v-if="error">Інвентаризаціїна справа не знайдена</p>
               </b-col>

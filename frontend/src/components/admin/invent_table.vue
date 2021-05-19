@@ -3,7 +3,7 @@
     <b-col>
       <b-container fluid>
         <b-row class="mt-5 mb-2">
-          <b-col cols="12" md="4">
+          <b-col cols="12" md="3">
             <b-form>
               <b-form-group
               >
@@ -17,7 +17,17 @@
               </b-form-group>
             </b-form>
           </b-col>
-          <b-col cols="12" offset-md="6" md="2" align="center">
+          <b-col cols="12" md="6">
+            <b-form-group label="Пошук за:">
+              <b-form-checkbox-group
+                id="checkbox-group-1"
+                v-model="selected"
+                :options="options"
+                name="flavour-1"
+              ></b-form-checkbox-group>
+            </b-form-group>
+          </b-col>
+          <b-col cols="12"  md="3" align="center">
             <b-button type="button" variant="danger" size="lg" @click="$emit('componentChange', 'InventForm')">Додати</b-button>
           </b-col>
         </b-row>
@@ -48,6 +58,8 @@
                        :per-page="perPage"
                        :filter="search"
                        @filtered="onFiltered"
+                       :filter-included-fields="selected"
+                       :filter-ignored-fields="ignoredFiedls"
                        @row-clicked="(item) => openToEdit(item)"
                        class="admin__table">
                 <template v-slot:cell(status)="row">
@@ -106,8 +118,6 @@ export default {
         'Площа загальна': 'total_area',
         'Площа житлова': 'main_area',
         'Площа зем. ділянки': 'land_area',
-        'Поверхів': 'floor',
-        'На якому поверсі': 'current_floor',
         'Статус': 'status',
         'Сторінок': 'pages',
         'Дата створення': 'created_at',
@@ -178,16 +188,6 @@ export default {
           sortable: true
         },
         {
-          key: "floor",
-          label: "Поверхів",
-          sortable: true
-        },
-        {
-          key: "current_floor",
-          label: "На якому поверсі",
-          sortable: true
-        },
-        {
           key: "pages",
           label: "Сторінок",
         },
@@ -207,6 +207,14 @@ export default {
           sortable: true
         },
       ],
+      ignoredFiedls: ['created_at', 'updated_at', 'pages', 'status', 'type_object', 'district'],
+      selected: [],
+      options: [
+        { text: '№ замовлення', value: 'code' },
+        { text: 'ПІБ замовника/назва юридичної особи', value: 'info' },
+        { text: 'Суб\'єкт господарювання', value: 'subject' },
+        { text: 'Адреса', value: 'address' }
+      ]
     }
   },
   computed: {
