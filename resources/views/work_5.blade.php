@@ -9,15 +9,15 @@
     body {
         font-family: 'Times New Roman', DejaVu Sans, serif;
     }
-   
+
 </style>
 </head>
 <body>
 <p style='font-size:11px;text-align:center;line-height:11px;'><strong>Комунальне підприємство &ldquo;Бюро технічної інвентаризації&rdquo; Одеської міської ради</strong></p>
-<p style='font-size:11px;text-align:center;line-height:11px;'>Замовлення-зобов&apos;язання № {{$code}} від {{$created_at}} на суму {{$sum}} грн.</p>
+<p style='font-size:11px;text-align:center;line-height:11px;'>Замовлення-зобов&apos;язання № {{$code}} від {{$created_at}} на суму {{$sum}} грн. @if(isset($lastSum) && $lastSum > 0) (доплата: {{round($sum - $lastSum, 2)}} грн.) @endif</p>
 <p style='font-size:11px;line-height:11px;'>{{$personal_data}}, надалі іменується &ldquo;Замовник&rdquo;, та Комунальне підприємство &ldquo;Бюро технічної інвентаризації&rdquo; Одеської міської ради, надалі іменується &ldquo;Виконавець&rdquo; (а разом - Сторони) уклали цей договір про наступне.</p>
 <p style='font-size:11px;line-height:11px;'>1. Виконавець бере на себе зобов&apos;язання виконати вид роботи <strong>&ldquo;Підготовка відповіді щодо технічних показників об’єкту нерухомості для юридичних осіб&rdquo;</strong> за: {{$personal_data}} або за адресою: {{$city}} {{$address}} {{$house_number}} {{$house_building}} {{$apartment}} {{$office}} у <strong>термін визначений замовником</strong>.</p>
-<p style='font-size:11px;line-height:11px;'>2. Замовник зобов&apos;язується сплатити Виконавцю за виконання роботи, що надається згідно з пунктом 1 цього замовлення у розмірі {{$sum}} грн.</p>
+<p style='font-size:11px;line-height:11px;'>2. Замовник зобов&apos;язується сплатити Виконавцю за виконання роботи, що надається згідно з пунктом 1 цього замовлення у розмірі {{$sum}} грн. @if(isset($lastSum) && $lastSum > 0) (доплата: {{round($sum - $lastSum, 2)}} грн.) @endif</p>
 <p style='font-size:11px;line-height:11px;'>3. Виконавець має право отримувати від замовника необхідну документацію для надання послуг за цим договором, а саме: правовстановлювальні документи та їх засвідчені копії, а також інші документи визначені законодавством України.&nbsp;</p>
 <p style='font-size:11px;line-height:11px;'>4. Відповідність за достовірність та повноту інформації, наданої відповідно до цього договору, несе Замовник.</p>
 <p style='font-size:11px;line-height:11px;'>5. Замовник своїм підписом засвідчує, що подані їм документи для укладення договору про надання послуг та подальшого зберігання згідні з оригіналом, у чому він розписується.</p>
@@ -46,15 +46,15 @@
 <p style='font-size:11px;line-height:11px;'><strong>Адреса:</strong> {{$city}} {{$address}} {{$house_number}} {{$house_building}} {{$apartment}} {{$office}}</p>
 <p style='font-size:11px;line-height:11px;'><strong>Замовник:</strong> {{$personal_data}}</p>
 <p style='font-size:11px;line-height:11px;'><strong>Вид робіт:</strong> <strong>&ldquo;Підготовка відповіді щодо технічних показників об’єкту нерухомості для юридичних осіб&rdquo;.</strong></p>
-<p style='font-size:11px;line-height:11px;'><strong><span style="color:#333333;">Сума:</span></strong> {{$sum}}<span style="color:#333333;">&nbsp;грн.</span></p>
+<p style='font-size:11px;line-height:11px;'><strong><span style="color:#333333;">Сума:</span></strong> {{$sum}}<span style="color:#333333;">&nbsp;грн. @if(isset($lastSum) && $lastSum > 0) (доплата: {{round($sum - $lastSum, 2)}} грн.) @endif</span></p>
 <p style='font-size:6px;line-height:6px; margin: 0;'><span style="font-size:6px;line-height:6px;">&nbsp;</span></p>
 <p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;font-size:6px;">&nbsp;</span></p>
 <p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;font-size:6px;">&nbsp;</span></p>
 <p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;font-size:6px;">&nbsp;</span></p>
 <p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;font-size:6px;">&nbsp;</span></p>
 <p style='font-size:6px;font-size:6px; margin: 0;text-align:center;'><span style="font-size:6px;font-size:6px;">Акт виконаних робіт</span></p>
-<p style='font-size:6px;font-size:6px; margin: 0;text-align:center;'><span style="font-size:6px;font-size:6px;">договір №&nbsp;</span>{{$code}}<span style="font-size:6px;">&nbsp;від {{$created_at}}&nbsp;</span><span style="font-size:6px;">на суму&nbsp;</span>{{$sum}}<span style="font-size:6px;">&nbsp;грн.</span></p>
-<p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;">Ми, що нижче підписались, Замовник&nbsp;</span>{{$personal_data}}<span style="font-size:6px;font-size:6px;">, з однієї сторони та Виконавець з іншої сторони, склали цей Акт в тому, що Виконавцем повністю та в строк повинен виконати вид роботи &ldquo;Підготовка відповіді щодо технічних показників об’єкту нерухомості для юридичних осіб&rdquo;, згідно з договором №&nbsp;</span>{{$code}}<span style="font-size:6px;">&nbsp;від {{$created_at}}&nbsp;</span><span style="font-size:6px;">на суму&nbsp;</span>{{$sum}}<span style="font-size:6px;">&nbsp;грн.</span></p>
+<p style='font-size:6px;font-size:6px; margin: 0;text-align:center;'><span style="font-size:6px;font-size:6px;">договір №&nbsp;</span>{{$code}}<span style="font-size:6px;">&nbsp;від {{$created_at}}&nbsp;</span><span style="font-size:6px;">на суму&nbsp;</span>{{$sum}}<span style="font-size:6px;">&nbsp;грн. @if(isset($lastSum) && $lastSum > 0) (доплата: {{round($sum - $lastSum, 2)}} грн.) @endif</span></p>
+<p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;">Ми, що нижче підписались, Замовник&nbsp;</span>{{$personal_data}}<span style="font-size:6px;font-size:6px;">, з однієї сторони та Виконавець з іншої сторони, склали цей Акт в тому, що Виконавцем повністю та в строк повинен виконати вид роботи &ldquo;Підготовка відповіді щодо технічних показників об’єкту нерухомості для юридичних осіб&rdquo;, згідно з договором №&nbsp;</span>{{$code}}<span style="font-size:6px;">&nbsp;від {{$created_at}}&nbsp;</span><span style="font-size:6px;">на суму&nbsp;</span>{{$sum}}<span style="font-size:6px;">&nbsp;грн. @if(isset($lastSum) && $lastSum > 0) (доплата: {{round($sum - $lastSum, 2)}} грн.) @endif</span></p>
 <p style='font-size:6px;font-size:6px; margin: 0;'><span style="font-size:6px;font-size:6px;">&nbsp;</span></p>
 @php
 $f17 = 0.307;

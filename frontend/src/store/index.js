@@ -12,7 +12,12 @@ export default new Vuex.Store({
     lastInventId: 0,
     lastProposalsId: 0,
     currentProposalsData: [],
-    user: null
+    user: null,
+    menu: [],
+    pages: [],
+    pagesContent: [],
+    pagesCategories: [],
+    content: null
   },
   mutations: {
     setAllData: (state, data) => {
@@ -37,6 +42,70 @@ export default new Vuex.Store({
 
     setUser: (state, data) => {
       state.user = data;
+    },
+
+    setPagesCategories: (state, data) => {
+      console.log(data);
+      let categories = data.map(item => {
+        if(item.parent === 0) {
+          return {text: item.name, value: item.id}
+        }
+      }).filter(item => item);
+
+      let allPages = data.map(item => ({text: item.name, value: item.id}));
+      // let menu = data.map(item => {
+      //   let child;
+      //   if(item.id === item.parent) {
+      //     child.push({id: item.id, parent: item.parent, name: item.name})
+      //   }
+      //   console.log(child);
+      //   return {id: item.id, parent: item.parent, name: item.name, child: child}
+      // });
+
+      let parents = data.filter(item => item.parent === 0);
+      let childs = data.filter(item => item.parent !== 0);
+
+
+
+      childs.forEach((child) => {
+        parents.forEach((parent) => {
+          if(child.parent === parent.id) {
+            if(parent?.childs) {
+
+              parent.childs.push(child);
+            } else {
+              parent.childs = [];
+              parent.childs.push(child);
+            }
+          }
+        })
+      })
+
+      console.log('menu', parents);
+      // let child = data.filter(item => item.parent > 0);
+      // let child_item = [];
+      // let menu = child.map((item) => (
+      //   parents.map(el => {
+      //     if(item.parent === el.id) {
+      //       child_item.push({id: item.id, parent: item.parent, name: item.name});
+      //       item.child = child_item;
+      //       return item
+      //     }
+      //     return item
+      //   })
+      //   ))
+
+      // console.log('menu', menu);
+
+      data
+      state.menu = parents;
+      state.pages = allPages;
+      state.pagesContent = data;
+      state.pagesCategories = categories;
+    },
+
+    setCurrentContent: (state, data) => {
+      state.content = data;
     },
   },
   actions: {
@@ -136,7 +205,7 @@ export default new Vuex.Store({
 
       return data;
     },
-    // Proposals 
+    // Proposals
     async getAllProposalsData({commit}) {
       let {data} = await rest({
         method: 'get',
@@ -189,6 +258,42 @@ export default new Vuex.Store({
       });
       return data;
     },
+    async fetchPagesCategories({commit}) {
+      let {data} = await rest({
+        method: 'post',
+        url:`page/categories`,
+      });
+
+      commit('setPagesCategories', data)
+      return data;
+    },
+    async addPageContent(_, params) {
+      let {data} = await rest({
+        method: 'post',
+        url:`page`,
+        data: params
+      });
+
+      return data;
+    },
+    async updatePageContent(_, params) {
+      let {data} = await rest({
+        method: 'patch',
+        url:`page/${params.id}`,
+        data: params.data
+      });
+
+      return data;
+    },
+    async getCurrentContent({commit}, id) {
+      let {data} = await rest({
+        method: 'get',
+        url:`page/${id}`
+      });
+      commit('setCurrentContent', data);
+
+      return data;
+    },
   },
   modules: {
   },
@@ -199,5 +304,11 @@ export default new Vuex.Store({
     lastInventId: (state) =>  state.lastInventId.toString(),
     lastProposalsId: (state) =>  state.lastProposalsId.toString(),
     user: (state) =>  state.user,
+    menu: (state) => state.menu,
+    pages: (state) => state.user,
+    pagesCategories: (state) =>  state.pagesCategories,
+    content: (state) => state.content,
+    allPages: (state) => state.pages,
+    allPagesContent: (state) => state.pagesContent,
   }
 })

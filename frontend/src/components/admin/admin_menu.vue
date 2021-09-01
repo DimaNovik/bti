@@ -34,6 +34,16 @@ export default {
           title: 'Додати користувача',
           component: 'AddUser',
           role: [1]
+        },
+        {
+          title: 'Додати сторінку',
+          component: 'AddPages',
+          role: [1]
+        },
+        {
+          title: 'Оновити сторінку',
+          component: 'UpdatePages',
+          role: [1]
         }
       ]
     }

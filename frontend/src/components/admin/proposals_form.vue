@@ -110,7 +110,7 @@
                 </b-form-group>
               </b-col>
             </b-row>
-            
+
             <b-row>
                 <b-col>
                     <b-form-group
@@ -230,8 +230,8 @@
             </b-row>
             <b-row>
               <b-col>
-                <b-link :href="`admin/proposals/find_for_pdf/${getProposalId}`" class="mr-3 link">Роздрукувати</b-link>
-                <b-link href="" class="mr-3 link">Роздрукувати доплату</b-link>
+                <b-link :href="`admin/proposals/find_for_pdf/${getProposalId}`" class="mr-3 link" target="_blank">Роздрукувати</b-link>
+                <b-link @click.prevent="saveOrder(true)" class="mr-3 link">Роздрукувати доплату</b-link>
               </b-col>
             </b-row>
           </b-form>
@@ -310,20 +310,35 @@ export default {
       },
       types_work: [
         {text: 'Оберіть тип роботи', value: null},
-        {text: 'Відповідь щодо наявності зареєстрованого права власності стосовно фізичних осіб', value: 1},
-        {text: 'Відповідь щодо наявності зареєстрованого права власності стосовно юридичних осіб', value: 2},
-        {text: 'Підготовка відповіді щодо технічних показників об\'єкту нерухомості для фізичних осіб', value: 4},
-        {text: 'Підготовка відповіді щодо технічних показників об\'єкту нерухомості для юридичних осіб', value: 5},
-        {text: 'Надання копій з інвентаризаційної або реєстраційної справи стосовно фізичних осіб', value: 6},
-        {text: 'Надання копій з інвентаризаційної або реєстраційної справи стосовно юридичних осіб', value: 7},
-        {text: 'Проставлення штампу у домовій книзі', value: 9},
-        {text: 'Приймання на зберігання інвентаризаційної справи  при первинній інвентаризації', value: 10},
-        {text: 'Приймання на зберігання інвентаризаційної справи  при поточній інвентаризації', value: 11},
+        {text: '1. Відповідь щодо наявності зареєстрованого права власності стосовно фізичних осіб', value: 1},
+        {text: '2. Відповідь щодо наявності зареєстрованого права власності стосовно юридичних осіб', value: 2},
+        {text: '4. Підготовка відповіді щодо технічних показників об\'єкту нерухомості для фізичних осіб', value: 4},
+        {text: '5. Підготовка відповіді щодо технічних показників об\'єкту нерухомості для юридичних осіб', value: 5},
+        {text: '6. Надання копій з інвентаризаційної або реєстраційної справи стосовно фізичних осіб', value: 6},
+        {text: '7. Надання копій з інвентаризаційної або реєстраційної справи стосовно юридичних осіб', value: 7},
+        {text: '9. Проставлення штампу у домовій книзі', value: 9},
+        {text: '10. Приймання на зберігання інвентаризаційної справи  при первинній інвентаризації', value: 10},
+        {text: '11. Приймання на зберігання інвентаризаційної справи  при поточній інвентаризації', value: 11},
+        {text: '12. Проведення судової експертизи (обстежень і досліджень) для фізичних осіб', value: 12},
+        {text: '13. Проведення судової експертизи (обстежень і досліджень) для юридичних осіб', value: 13},
+        {text: '14. Нова зйомка об’єкту нерухомості для  фізичних осіб (домоволодіння, нежитлові будівлі та споруди тощо)', value: 14},
+        {text: '15. Нова зйомка об’єкту нерухомості для юридичних осіб (домоволодіння, нежитлові будівлі та споруди тощо)', value: 15},
+        {text: '16. Поточна технічна інвентаризація об’єкту нерухомості для фізичних осіб (домоволодіння, нежитлові будівлі та споруди тощо)', value: 16},
+        {text: '17. Поточна технічна інвентаризація об’єкту нерухомості для юридичних осіб (домоволодіння, нежитлові будівлі та споруди тощо)', value: 17},
+        {text: '18. Нова зйомка об’єкту нерухомості для  фізичних осіб (квартира, нежитлові приміщення тощо)', value: 18},
+        {text: '19. Нова зйомка об’єкту нерухомості для  юридичних осіб (квартира, нежитлові приміщення тощо)', value: 19},
+        {text: '20. Поточна технічна інвентаризація об’єкту нерухомості для фізичних осіб (квартира, нежитлові приміщення тощо)', value: 20},
+        {text: '21. Поточна технічна інвентаризація об’єкту нерухомості для юридичних осіб (квартира, нежитлові приміщення тощо)', value: 21},
+        {text: '22. Додатково за проведення поділу, виділу об’єктів нерухомого майна', value: 22},
+        {text: '23. Додатково за проведення розрахунку часток об’єктів нерухомого майна', value: 23},
+        {text: '24. Додатково за проведення переоцінки будинку, житлової прибудови, підвалу надбудови/господарських будівель, прибудов/господарських споруд/  будинків та споруд у зв’язку з індексацією', value: 24},
+        {text: '25. Складання висновку про неможливість розподілу домоволодіння', value: 25},
+        {text: '26. Підготовка відповіді щодо знесення об’єкту нерухомості для фізичних осіб', value: 26},
+        {text: '27. Підготовка відповіді щодо знесення об’єкту нерухомості для юридичних осіб', value: 27},
       ],
-    
       total: 0,
       sumCopyes: 0.91,
-      dataLoaded: false
+      dataLoaded: false,
     }
   },
   props: {
@@ -339,7 +354,7 @@ export default {
             this.form.sum = TYPE_WORK_SUM.find(item => item.id === newVal).sum;
           }
         }
-     
+
       },
       'form.copyes': {
         immediate: false,
@@ -352,7 +367,7 @@ export default {
               }
           }
         }
-      
+
       },
       'form.coefiction': {
         immediate: false,
@@ -365,7 +380,7 @@ export default {
               }
           }
         }
-      
+
       },
       'form.additionally': {
         immediate: false,
@@ -378,14 +393,17 @@ export default {
               }
           }
         }
-      
+
       },
   },
   computed: {
     ...mapGetters(['currentProposalsData', 'lastProposalsId']),
     getProposalId() {
       return this.currentProposalsData && this.currentProposalsData?.id;
-    }
+    },
+    getCurrentLastSum() {
+      return this.currentProposalsData && this.currentProposalsData?.sum
+    },
   },
   methods: {
     ...mapActions(['createProposal', 'getCurrentProposal', 'saveProposal', 'findLastProposal', 'generateProposalPDF']),
@@ -409,8 +427,11 @@ export default {
       }
 
     },
-    saveOrder() {
-      this.form.status = 1;
+    saveOrder(isSurcharge) {
+      if(!isSurcharge) {
+        this.form.status = 1;
+      }
+
       const formData = new FormData();
       const id = this.current_invent;
 
@@ -420,7 +441,11 @@ export default {
 
       if(id) {
         this.saveProposal({data: this.form, id}).then(()=> {
-          this.backToTable();
+          if(isSurcharge) {
+            window.open(`${document.location}/proposals/find_for_pdf/${this.getProposalId}?sum=${localStorage.getItem('lasSum')}`)
+          } else {
+            this.backToTable();
+          }
         })
       } else {
         this.createOrder();
@@ -451,7 +476,8 @@ export default {
 
         setTimeout(() => {
           this.dataLoaded = false;
-        }, 2000)
+          localStorage.setItem('lasSum', this.getCurrentLastSum);
+        }, 1000)
       })
     },
     backToTable() {
@@ -459,7 +485,7 @@ export default {
     },
     getCurrentCode() {
       let id = +this.lastProposalsId;
- 
+
       if(id < 10) {
           this.form.code = `00000000${id}`
       } else if (id >= 10 && id < 100) {
@@ -482,11 +508,13 @@ export default {
     },
     printOrder(id) {
         this.generateProposalPDF(id)
-    }
+    },
   },
   mounted() {
     if(this.current_invent) {
       this.fulledData(this.current_invent);
+
+
     } else {
       this.findLastProposal().then(() => {
         this.getCurrentCode();
@@ -494,6 +522,7 @@ export default {
     }
   },
   beforeDestroy() {
+    localStorage.setItem('lasSum', 0);
     this.$emit('chooseCurrent',null);
   }
 }

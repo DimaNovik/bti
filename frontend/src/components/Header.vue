@@ -21,6 +21,10 @@
             <p align="right"><a href="https://1535.odessa.ua/" target="_blank" rel="nooper" class="info__link">ЄДИНИЙ ЦЕНТР ЗВЕРНЕНЬ ГРОМАДЯН</a></p>
           </div>
         </div>
+        <div class="info info__timer">
+          <p class="info__date">{{showDate()}} |</p>
+          <p class="info__time">{{showTime()}}</p>
+        </div>
       </div>
     </b-col>
     <b-col xl="1"></b-col>
@@ -29,8 +33,28 @@
 </template>
 <script>
 
+import moment from 'moment'
+
 export default {
   name: 'Header',
+  date: {
+    time: 0
+  },
+  methods: {
+    showDate() {
+      return moment().format('DD.MM.YYYY')
+    },
+    showTime() {
+      return moment().format('HH:mm')
+    }
+  },
+  mounted() {
+    this.showDate();
+
+    setInterval(() => {
+      this.showTime();
+    }, 1000)
+  }
 }
 
 </script>
@@ -41,7 +65,7 @@ export default {
     background-image: url('/img/bg_main.jpg');
     background-repeat: no-repeat;
     background-position: 50% 0;
-    background-size: contain;
+    background-size: cover;
     background-color: #fff;
     padding: 62px 20px;
     
@@ -91,17 +115,29 @@ export default {
 
   .inform_area {
     display: flex;
-    justify-content: 'space-between';
+    justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 40px;
+
+    @media screen and (max-width: 768px) {
+      justify-content: center;
+    }
   }
 
   .info {
     display: flex;
-    justify-content: 'space-between';
-    align-items: 'center';
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
     padding: 20px 15px;
     border-radius: 5px;
     background-color: #FFF;
+
+    &__timer {
+      @media screen and (max-width: 768px) {
+        margin-top: 20px;
+      }
+    }
 
     &__phone {
       margin-top: 5px;
@@ -116,6 +152,16 @@ export default {
     &__link {
       text-decoration: underline;
       color: blue
+    }
+    &__date {
+      font-size: 24px;
+      text-transform: uppercase;
+    }
+    &__time {
+      font-weight: 700;
+      font-size: 36px;
+      color: #EF0A29;
+      margin-left: 10px;
     }
   }
 </style>

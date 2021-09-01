@@ -74,7 +74,7 @@ class ProposalsController extends Controller
     {
         $proposals = bti_proposals::findOrFail($id);
         $proposals->update($request->all());
- 
+
         return $proposals;
     }
 
@@ -97,27 +97,31 @@ class ProposalsController extends Controller
         return $proposals;
     }
 
-    public function findForPDF($id)
+    public function findForPDF(Request $request, $id)
     {
+        $query = $request->all();
+        $lastSum = (empty($query['sum'])) ? '' : $query['sum'];
         $proposals =  bti_proposals::findOrFail($id);
 
+
         $data = [
-            'code' => $proposals['code'], 
-            'sum' => $proposals['sum'], 
-            'copyes' => $proposals['copyes'], 
-            'type' => $proposals['type'], 
-            'person' => $proposals['person'], 
-            'personal_data' => $proposals['personal_data'], 
-            'address' => $proposals['address'], 
-            'city' => $proposals['city'], 
-            'house_number' => $proposals['house_number'], 
-            'house_building' => $proposals['house_building'], 
-            'apartment' => $proposals['apartment'], 
-            'office' => $proposals['office'], 
-            'status' => $proposals['status'], 
-            'additionally' => $proposals['additionally'], 
-            'coefiction' => $proposals['coefiction'], 
-            'created_at' => substr($proposals['created_at'], 0, -9), 
+            'code' => $proposals['code'],
+            'sum' => $proposals['sum'],
+            'copyes' => $proposals['copyes'],
+            'type' => $proposals['type'],
+            'person' => $proposals['person'],
+            'personal_data' => $proposals['personal_data'],
+            'address' => $proposals['address'],
+            'city' => $proposals['city'],
+            'house_number' => $proposals['house_number'],
+            'house_building' => $proposals['house_building'],
+            'apartment' => $proposals['apartment'],
+            'office' => $proposals['office'],
+            'status' => $proposals['status'],
+            'additionally' => $proposals['additionally'],
+            'coefiction' => $proposals['coefiction'],
+            'lastSum' => $lastSum,
+            'created_at' => substr($proposals['created_at'], 0, -9),
             'updated_at' => substr($proposals['updated_at'], 0, -9),
         ];
 
@@ -125,7 +129,7 @@ class ProposalsController extends Controller
         $pdf = PDF::loadView('work_'.$proposals['type'], $data);
 
         return $pdf->download('work_'.$proposals['type']. '.pdf');
-    
+
     }
 
 

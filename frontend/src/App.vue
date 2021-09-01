@@ -2,8 +2,10 @@
   <div id="app">
     <Inform/>
     <app-header />
-    <app-menu v-if="$route.name === 'Home'"/>
-    <router-view/>
+    <app-menu v-if="$route.name != 'Admin'"/>
+    <transition  name="fade" mode="out-in">
+      <router-view/>
+    </transition>
     <app-footer />
   </div>
 </template>
@@ -26,5 +28,10 @@
 </script>
 
 <style lang="scss">
-
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 15s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+}
 </style>

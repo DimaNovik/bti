@@ -15,12 +15,15 @@ use Illuminate\Http\Request;
 
 Route::group(['prefix' => '/v1', 'namespace' => 'Api\V1', 'as' => 'api.'], function () {
     Route::get('inventories/find/{id}', 'InventoriesController@find');
+    Route::resource('page', 'Pages', ['except' => ['create', 'edit']]);
+    Route::post('page/categories', 'Pages@categories');
 
     Route::group(['middleware' => 'auth:api'], static function () {
         Route::resource('inventories', 'InventoriesController', ['except' => ['create', 'edit']]);
         Route::post('inventories/last', 'InventoriesController@findLast');
         Route::resource('proposals', 'ProposalsController', ['except' => ['create', 'edit']]);
         Route::post('proposals/last', 'ProposalsController@findLast');
+
     });
 });
 

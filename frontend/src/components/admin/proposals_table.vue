@@ -57,8 +57,9 @@
                        :current-page="currentPage"
                        :per-page="perPage"
                        :filter="search"
-                       :filter-ignored-fields="ignoredFiedls"
+                       :filter-ignored-fields="ignoredFields"
                        :filter-included-fields="selected"
+                       :filter-debounce="200"
                        @filtered="onFiltered"
                        @row-clicked="(item) => openToEdit(item)"
                        class="admin__table">
@@ -106,7 +107,7 @@ export default {
     return {
       search: null,
       currentPage: 1,
-      perPage: 20,
+      perPage: 40,
       totalRows: null,
       json_fields: {
         '№ замовлення': 'code',
@@ -212,7 +213,7 @@ export default {
           sortable: true
         },
       ],
-      ignoredFiedls: ['created_at', 'updated_at', 'coefiction', 'status', 'type', 'copyes'],
+      ignoredFields: ['created_at', 'updated_at', 'coefiction', 'status', 'type', 'copyes'],
       selected: [],
       options: [
         { text: '№ замовлення', value: 'code' },
@@ -227,13 +228,6 @@ export default {
     setAllDataTable() {
       return this.proposalsData.length ? this.proposalsData : [];
     },
-    sortOptions() {
-      return this.fields
-          .filter(f => f.sortable)
-          .map(f => {
-            return { text: f.label, value: f.key }
-          })
-    }
   },
   methods: {
     ...mapActions(['getAllProposalsData']),

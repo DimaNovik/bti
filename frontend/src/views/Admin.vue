@@ -23,6 +23,8 @@
 
 import admin_menu from "@/components/admin/admin_menu";
 import AddUser from "@/components/admin/add_user";
+import AddPages from "@/components/admin/add_pages";
+import UpdatePages from "@/components/admin/update_pages";
 import LoginUser from "@/components/admin/login_user";
 import InventTable from "@/components/admin/invent_table";
 import InventForm from "@/components/admin/invent_form";
@@ -42,12 +44,14 @@ export default {
   components: {
     admin_menu,
     AddUser,
+    AddPages,
     LoginUser,
     InventForm,
     InventTable,
     ProposalsTable,
     ProposalsForm,
-    StartTemplate
+    StartTemplate,
+    UpdatePages
   },
   computed: {
     ...mapGetters(['user']),

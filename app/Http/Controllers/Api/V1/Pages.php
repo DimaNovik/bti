@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-
-use App\pages;
-use App\page_content;
+use App\bti_pages;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,9 +13,11 @@ class Pages extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        //
+        $content = bti_pages::all();
+        return $content;
     }
 
     /**
@@ -27,7 +27,8 @@ class Pages extends Controller
      */
     public function create()
     {
-        //
+        $content = bti_pages::create($request->all());
+        return $content;
     }
 
     /**
@@ -38,7 +39,8 @@ class Pages extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $content = bti_pages::create($request->all());
+        return $content;
     }
 
     /**
@@ -49,7 +51,7 @@ class Pages extends Controller
      */
     public function show($id)
     {
-        //
+        return bti_pages::findOrFail($id);
     }
 
     /**
@@ -60,7 +62,7 @@ class Pages extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -72,7 +74,10 @@ class Pages extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pages = bti_pages::findOrFail($id);
+        $pages->update($request->all());
+
+        return $pages;
     }
 
     /**
@@ -84,5 +89,12 @@ class Pages extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function categories()
+    {
+        $content = bti_pages::all();
+        return $content;
     }
 }
