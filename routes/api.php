@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 Route::group(['prefix' => '/v1', 'namespace' => 'Api\V1', 'as' => 'api.'], function () {
     Route::get('inventories/find/{id}', 'InventoriesController@find');
     Route::resource('page', 'Pages', ['except' => ['create', 'edit']]);
+    Route::resource('news', 'News', ['except' => ['create', 'edit']]);
     Route::post('page/categories', 'Pages@categories');
 
     Route::group(['middleware' => 'auth:api'], static function () {

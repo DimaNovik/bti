@@ -1,70 +1,35 @@
 <template>
   <div class="home">
     <b-container>
-      <b-row class="mb-5 mt-5" align-v="center">
-        <b-col cols="12" md="6" xl="6">
-          <p class="mb-5"><b>Пошук інформації за номером інвентаризаціїної справи:</b></p>
-          <b-row align-h="center">
-            <b-col cols="12" md="12" lg="8" >
-              <b-form @submit.prevent="findOrder" @key.enter="findOrder">
-                <b-form-group
-                    id="input-group-1"
-                    label-for="input-1"
-                    label="Номер інвентаризаціїної справи"
-                >
-                  <b-form-input
-                      id="input-1"
-                      v-model="code"
-                      type="number"
-                      :placeholder="placeholder"
-                      size="lg"
-                      :formatter="formatNumber"
-                      class="text-center"
-                  ></b-form-input>
-                </b-form-group>
-                <b-row>
-                  <b-col cols="4"></b-col>
-                  <b-col cosl="4" align="center">
-                  <b-button type="button"
-                              variant="danger"
-                              size="lg"
-                              class="home__info_btn"
-                              :disabled="code.length < 9"
-                              @click="findOrder">
-                              Пошук
-                              </b-button>
-                  </b-col>
-                  <b-col cols="4"></b-col>
-                </b-row>
-
-              </b-form>
-            </b-col>
-            <b-col cols="12" md="0" lg="4"></b-col>
-          </b-row>
+      <b-row class="mb-5 mt-5">
+        <b-col cols="6">
+          <div class="news__left">
+            <h1>Новини</h1>
+            <div>
+              <img src="" alt="">
+              <p>Короткий текст</p>
+              <p>05.09.2021</p>
+            </div>
+          </div>
         </b-col>
-        <b-col cols="12" md="6" xl="6">
-          <transition appear name="fade">
-            <b-row>
-              <b-col cols="12">
-                <b-card class="mt-3" header='Інвентаризаціїна справа передана на зберігання до КП "БТІ" ОМР'  v-if="result.length > 0">
-                  <p class="home__info_text"><span class="underlined"><b>{{ getOrderDate }}</b></span>
-                    на об'єкт нерухомого майна за адресою:
-                  </p>
-                  <p class="home__info_text"><span class="underlined">
-                    <b>м. Одеса, {{ getResult.address }} буд. {{ getResult.house_number }}
-                      <span v-if="getResult.house_building">, корп. {{getResult.house_building}}</span>
-                      <span v-if="getResult.apartment">, {{ getResult.apartment }}</span> <span v-if="getResult.office_number">офіс: {{getResult.office_number}}</span>
-                    </b>
-                  </span>
-                  </p>
-                  <p class="home__info_text">Площа загальна: <b>{{ getResult.total_area }}м<sup>2</sup></b></p>
-                  <p class="home__info_text">Площа житлова: <b>{{ getResult.main_area }}м<sup>2</sup></b></p>
-                  <p class="home__info_text">Площа земельної ділянки: <b>{{ getResult.land_area }}м<sup>2</sup></b></p>
-                </b-card>
-                <p class="home__info_error" v-if="error">Інвентаризаціїна справа не знайдена</p>
-              </b-col>
-            </b-row>
-          </transition>
+        <b-col cols="4">
+          <ul class="news__right">
+            <li>
+              <img src="" alt="">
+              <p>Текст</p>
+              <p>04.01.2021</p>
+            </li>
+            <li>
+              <img src="" alt="">
+              <p>Текст</p>
+              <p>04.01.2021</p>
+            </li>
+            <li>
+              <img src="" alt="">
+              <p>Текст</p>
+              <p>04.01.2021</p>
+            </li>
+          </ul>
         </b-col>
       </b-row>
     </b-container>
@@ -73,47 +38,10 @@
 
 <script>
 
-import {mapActions} from "vuex";
-
-const moment = require('moment');
 
 export default {
   name: 'Home',
-  data() {
-    return {
-      code: '',
-      placeholder: '',
-      result: [],
-      error: false,
-    }
-  },
-  computed: {
-    getResult() {
-      return this.result.length ? this.result[0] : []
-    },
-    getOrderDate() {
-      return this.result.length ? moment(this.getResult.updated_at).format('DD-MM-YYYY') : '00-00-0000'
-    }
-  },
-  methods: {
-    ...mapActions(['findInventories']),
-    findOrder() {
-      this.error = false;
-      this.result = [];
-      this.findInventories(this.code).then(response => {
-        if (response.length > 0) {
-          this.result = response;
-        } else {
-          this.error = true;
-        }
-      }).catch(() => {
-        this.error = true;
-      })
-    },
-    formatNumber(e) {
-      return String(e).substring(0, 9);
-    },
-  }
+
 }
 </script>
 

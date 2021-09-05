@@ -44,6 +44,11 @@ export default {
           title: 'Оновити сторінку',
           component: 'UpdatePages',
           role: [1]
+        },
+        {
+          title: 'Новини',
+          component: 'AddNews',
+          role: [1]
         }
       ]
     }

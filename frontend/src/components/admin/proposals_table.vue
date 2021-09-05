@@ -237,7 +237,7 @@ export default {
     },
     onFiltered(filteredItems) {
       this.totalRows = filteredItems.length
-      this.currentPage = 1
+
     }
   },
   created() {

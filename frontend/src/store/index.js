@@ -17,7 +17,8 @@ export default new Vuex.Store({
     pages: [],
     pagesContent: [],
     pagesCategories: [],
-    content: null
+    content: null,
+    news: [],
   },
   mutations: {
     setAllData: (state, data) => {
@@ -45,7 +46,6 @@ export default new Vuex.Store({
     },
 
     setPagesCategories: (state, data) => {
-      console.log(data);
       let categories = data.map(item => {
         if(item.parent === 0) {
           return {text: item.name, value: item.id}
@@ -53,18 +53,9 @@ export default new Vuex.Store({
       }).filter(item => item);
 
       let allPages = data.map(item => ({text: item.name, value: item.id}));
-      // let menu = data.map(item => {
-      //   let child;
-      //   if(item.id === item.parent) {
-      //     child.push({id: item.id, parent: item.parent, name: item.name})
-      //   }
-      //   console.log(child);
-      //   return {id: item.id, parent: item.parent, name: item.name, child: child}
-      // });
 
       let parents = data.filter(item => item.parent === 0);
       let childs = data.filter(item => item.parent !== 0);
-
 
 
       childs.forEach((child) => {
@@ -81,23 +72,6 @@ export default new Vuex.Store({
         })
       })
 
-      console.log('menu', parents);
-      // let child = data.filter(item => item.parent > 0);
-      // let child_item = [];
-      // let menu = child.map((item) => (
-      //   parents.map(el => {
-      //     if(item.parent === el.id) {
-      //       child_item.push({id: item.id, parent: item.parent, name: item.name});
-      //       item.child = child_item;
-      //       return item
-      //     }
-      //     return item
-      //   })
-      //   ))
-
-      // console.log('menu', menu);
-
-      data
       state.menu = parents;
       state.pages = allPages;
       state.pagesContent = data;
@@ -106,6 +80,10 @@ export default new Vuex.Store({
 
     setCurrentContent: (state, data) => {
       state.content = data;
+    },
+
+    setAllNewsData: (state, data) => {
+      state.news = data;
     },
   },
   actions: {
@@ -293,6 +271,16 @@ export default new Vuex.Store({
       commit('setCurrentContent', data);
 
       return data;
+    },
+    async getAllNewsData({commit}) {
+      let {data} = await rest({
+        method: 'get',
+        url:'news'
+      });
+
+      console.log(data);
+
+      commit('setAllNewsData', data);
     },
   },
   modules: {

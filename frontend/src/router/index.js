@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import InventPage from '../views/InvetPage.vue'
 import store  from '@/store';
 
 Vue.use(VueRouter)
@@ -12,9 +13,16 @@ const routes = [
     component: Home,
     beforeEnter(to, from, next) {
       store.dispatch('fetchPagesCategories').finally(() => {
-        next();
+        store.dispatch('getAllNewsData').finally(() => {
+          next();
+        })
       })
     }
+  },
+  {
+    path: '/find-invent',
+    name: 'InventPage',
+    component: InventPage,
   },
   {
     path: '/admin',
