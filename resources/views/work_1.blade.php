@@ -22,13 +22,13 @@ $i3 = 13;
 $i4 = 84;
 $i5 = 86;
 $i6 = 129;
-$i7 = $additionally*21;
+$i7 = $additionally*18;
 $i8 = 13;
 $i9 = 13;
 $i10 = 13;
 $i11 = $copyes;
-$j7= $additionally*0.114;
-$k7=    7*$i7;
+$j7= floor($additionally*0.114);
+$k7= 7*$i7;
 $total = round($i1 + $i2 + $i3 + $i4 + $i5 + $i6 + $i7 + $i8 + $i9 + $i10 + $i11);
 @endphp
 <div style="і">
@@ -65,12 +65,12 @@ $total = round($i1 + $i2 + $i3 + $i4 + $i5 + $i6 + $i7 + $i8 + $i9 + $i10 + $i11
     <p style="margin-top:0pt; margin-bottom:0pt; text-align:center;">МФО 328209, код ЄДРПОУ 03350290, вул. Троїцька, 25, м. Одеса, 65048</p>
     <p style="margin-top:0pt; margin-bottom:0pt;">&nbsp;</p>
     <p class="Standard" align="center">Рахунок за виконання робіт за замовленням</p>
-           <p class="Standard" style="line-height:150%;" align="center"> № {{$code}} від {{$created_at}}</p><p class="Standard"><strong>Адреса:</strong> {{$city}} {{$address}} {{$house_number}} {{$house_building}} {{$apartment}} {{$office}}</p>
+           <p class="Standard" style="line-height:150%;" align="center"> № {{$code}} від {{$created_at}}</p>
           <p style="margin-top:0pt; margin-bottom:0pt;"><strong>Адреса:</strong> {{$city}} {{$address}} {{$house_number}} {{$house_building}} {{$apartment}} {{$office}}</p>
     <p style="margin-top:0pt; margin-bottom:0pt;"><strong>Замовник:</strong> {{$personal_data}}</p>
     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify;"><strong>Вид робіт:</strong> <strong>&ldquo;Відповідь щодо наявності зареєстрованого права власності стосовно фізичних осіб&rdquo;.</strong></p>
     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify;"><strong><span style="color:#333333;">Сума:</span></strong><span style="color:#333333;">&nbsp;</span>{{$sum}}<span style="color:#333333;">&nbsp;грн.</span></p>
-    <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%;"><span style="color:#333333;">&nbsp;</span></p>
+    <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; line-height:150%; page-break-after: always;"><span style="color:#333333;">&nbsp;</span></p>
     <p style="margin-top:0pt; margin-bottom:0pt; text-indent:28.35pt; text-align:justify; font-size:10px;">Я, {{$personal_data}}, надалі іменується &ldquo;Замовник&rdquo;, що ознайомлений(а) з вимогами Закону України &ldquo;Про захист персональних даних&rdquo;, надаю згоду Комунальному підприємству &ldquo;Бюро технічної інвентаризації&rdquo; Одеської міської ради, надалі іменується &ldquo;Виконавець&rdquo;, на збір та обробку моїх персональних особистих даних, з метою забезпечення вимог чинного законодавства про державну реєстрацію прав власності, інших майнових прав та їх обтяжень.</p>
     <p style="margin-top:0pt; margin-bottom:0pt; text-indent:28.35pt; text-align:justify; font-size:10px;"><span style="width:28.35pt; text-indent:0pt; display:inline-block;">&nbsp;</span>Мені роз&rsquo;яснено, що відповідно до статті 8 Закону України &ldquo;Про захист персональних даних&rdquo; я маю право:</p>
     <p style="margin-top:0pt; margin-bottom:0pt; text-indent:28.35pt; text-align:justify; font-size:10px;">1) знати про джерела збирання, місцезнаходження своїх персональних даних, мету їх обробки, місцезнаходження або місце проживання (перебування) володільця чи розпорядника персональних даних або дати відповідне доручення щодо отримання цієї інформації уповноваженим ним особам, крім випадків, встановлених законом;</p>
@@ -516,7 +516,7 @@ $total = round($i1 + $i2 + $i3 + $i4 + $i5 + $i6 + $i7 + $i8 + $i9 + $i10 + $i11
                         <p style='margin:0cm;margin-bottom:.0001pt;font-size:8px;'><span style='font-size:8px;color:black;'>&nbsp;</span></p>
                     </td>
                     <td style="width:2.0cm;border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;padding:0cm 5.4pt 0cm 5.4pt;height:  5.9pt;">
-                        <p style='margin:0cm;margin-bottom:.0001pt;font-size:8px;text-align:center;'><strong><span style="font-size:8px;color:black;">{{floor(($total+($total*0.2))*2)}}</span></strong></p>
+                        <p style='margin:0cm;margin-bottom:.0001pt;font-size:8px;text-align:center;'><strong><span style="font-size:8px;color:black;">{{floor(($total+floor($total*0.2))*$coefiction)}}</span></strong></p>
                     </td>
                     <td style="height:5.9pt;border:none;"><br></td>
                 </tr>

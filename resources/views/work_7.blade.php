@@ -39,7 +39,6 @@
 </head>
 @php
 $i1 = 51;
-$i2 = 13;
 $i3 = 13;
 $i4 = 84;
 $i5 = 86;
@@ -49,7 +48,6 @@ $i8 = 13;
 $i9 = 13;
 $i10 = 13;
 $total = $i1 + $i2 + $i3 + $i4 + $i5 + $i6 + $i7 + $i8 + $i9 + $i10;
-$totalCoef = floor(($total + floor($total*0.2))*$coefiction);
 @endphp
 <body>
     <div>
@@ -171,35 +169,6 @@ $totalCoef = floor(($total + floor($total*0.2))*$coefiction);
                         <p style="text-align:center; widows:2; orphans:2; font-size:8px;">2</p>
                     </td>
                     <td style="width:100.3pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle;">
-                        <p style="widows:2; orphans:2; font-size:8px;"><span style="">Обробка персональних даних</span></p>
-                    </td>
-                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
-                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">&nbsp;</p>
-                    </td>
-                    <td style="width:38.8pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
-                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">Заява</span></p>
-                    </td>
-                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
-                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">5</span></p>
-                    </td>
-                    <td style="width:24.65pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
-                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,083</span></p>
-                    </td>
-                    <td style="width:24.6pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
-                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">&nbsp;</span></p>
-                    </td>
-                    <td style="width:45.9pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
-                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,083</span></p>
-                    </td>
-                    <td style="width:48.75pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
-                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">{{$i2}}</span></p>
-                    </td>
-                </tr>
-                <tr style="height:7.35pt;">
-                    <td style="width:10.05pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
-                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">3</p>
-                    </td>
-                    <td style="width:100.3pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle;">
                         <p style="widows:2; orphans:2; font-size:8px;"><span style="">Виписка рахунків (електронна версія)</span></p>
                     </td>
                     <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
@@ -226,7 +195,7 @@ $totalCoef = floor(($total + floor($total*0.2))*$coefiction);
                 </tr>
                 <tr style="height:21pt;">
                     <td style="width:10.05pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
-                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">4</p>
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">3</p>
                     </td>
                     <td style="width:100.3pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle;">
                         <p style="widows:2; orphans:2; font-size:8px;"><span style="">Розшукування інвентаризаційно-реєстраційної справи, унесення в книгу обліку видачі з архіву з позначкою про повернення</span></p>
@@ -255,7 +224,7 @@ $totalCoef = floor(($total + floor($total*0.2))*$coefiction);
                 </tr>
                 <tr style="height:21pt;">
                     <td style="width:10.05pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
-                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">5</p>
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">4</p>
                     </td>
                     <td style="width:100.3pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle;">
                         <p style="widows:2; orphans:2; font-size:8px;"><span style="">Відбір необхідної інформації в інвентаризаційній та/або реєстраційної справи для складання довідки</span></p>
@@ -284,7 +253,7 @@ $totalCoef = floor(($total + floor($total*0.2))*$coefiction);
                 </tr>
                 <tr style="height:12.45pt;">
                     <td style="width:10.05pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
-                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">6</p>
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">5</p>
                     </td>
                     <td style="width:100.3pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle;">
                         <p style="widows:2; orphans:2; font-size:8px;"><span style="">Складання проекту відповіді</span></p>
@@ -313,7 +282,7 @@ $totalCoef = floor(($total + floor($total*0.2))*$coefiction);
                 </tr>
                 <tr style="height:12.15pt;">
                     <td style="width:10.05pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
-                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">7</p>
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">6</p>
                     </td>
                     <td style="width:100.3pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle;">
                         <p style="widows:2; orphans:2; font-size:8px;"><span style="">Зняття копій шляхом застосування копіювальної техніки</span></p>
@@ -342,7 +311,7 @@ $totalCoef = floor(($total + floor($total*0.2))*$coefiction);
                 </tr>
                 <tr style="height:6.55pt;">
                     <td style="width:10.05pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
-                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">8</p>
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">7</p>
                     </td>
                     <td style="width:100.3pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
                         <p style="widows:2; orphans:2; font-size:8px;"><span style="">Видача документа замовнику</span></p>
@@ -371,7 +340,7 @@ $totalCoef = floor(($total + floor($total*0.2))*$coefiction);
                 </tr>
                 <tr style="height:7.45pt;">
                     <td style="width:10.05pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
-                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">9</p>
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">8</p>
                     </td>
                     <td style="width:100.3pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle;">
                         <p style="widows:2; orphans:2; font-size:8px;"><span style="">Складання акта виконання робіт</span></p>
@@ -400,7 +369,7 @@ $totalCoef = floor(($total + floor($total*0.2))*$coefiction);
                 </tr>
                 <tr style="height:7.45pt;">
                     <td style="width:10.05pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
-                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">10</p>
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">9</p>
                     </td>
                     <td style="width:100.3pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle;">
                         <p style="widows:2; orphans:2; font-size:8px;">Таксування виконаних робіт (електронна версія)</p>
@@ -492,7 +461,7 @@ $totalCoef = floor(($total + floor($total*0.2))*$coefiction);
                         <p style="widows:2; orphans:2; font-size:8px;"><span style="">&nbsp;</span></p>
                     </td>
                     <td style="width:48.75pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
-                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><strong><span style="background-color:white;">{{$totalCoef}}</span></strong></p>
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><strong><span style="background-color:white;">{{floor(($total+($total*0.2))*$coefiction)}}</span></strong></p>
                     </td>
                 </tr>
             </tbody>

@@ -228,7 +228,7 @@ export default {
   },
     watch: {
         'search': {
-            immediate: false,
+            immediate: true,
             handler(newVal) {
                 if(!newVal.length) {
                     this.filterSearch = null;
@@ -253,9 +253,9 @@ export default {
       this.totalRows = filteredItems.length
       this.currentPage = 1
     },
-      startSearch() {
-        this.filterSearch = this.search;
-      }
+    startSearch() {
+      this.filterSearch = this.search;
+    }
   },
   created() {
     this.totalRows = this.proposalsData.length

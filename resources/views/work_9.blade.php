@@ -48,7 +48,6 @@ $i8 = 13;
 $i9 = 13;
 $i10 = 13;
 $total = $i1 + $i2 + $i3 + $i4 + $i5 + $i6 + $i8 + $i9 + $i10;
-$totalCoef = floor(($total + floor($total*0.2))*$coefiction);
 @endphp
 <body>
     <div>
@@ -80,7 +79,8 @@ $totalCoef = floor(($total + floor($total*0.2))*$coefiction);
         <p class="Standard" style="text-align:center;">МФО 328209, код ЄДРПОУ 03350290, вул. Троїцька, 25, м. Одеса, 65048</p>
         <p class="Standard">&nbsp;</p>
        <p class="Standard" align="center">Рахунок за виконання робіт за замовленням</p>
-               <p class="Standard" style="line-height:150%;" align="center"> № {{$code}} від {{$created_at}}</p> <p class="Standard"><strong>Адреса:</strong> {{$city}} {{$address}} {{$house_number}} {{$house_building}} {{$apartment}} {{$office}}</p>
+               <p class="Standard" style="line-height:150%;" align="center"> № {{$code}} від {{$created_at}}</p>
+<p class="Standard"><strong>Адреса:</strong> {{$city}} {{$address}} {{$house_number}} {{$house_building}} {{$apartment}} {{$office}}</p>
         <p class="Standard"><strong>Замовник:</strong> {{$personal_data}}</p>
         <p class="Standard" style="text-align:justify;"><strong>Вид робіт:</strong> <strong>&ldquo;Проставляння штампу у домовій книзі&rdquo;.</strong></p>
         <p class="Standard" style="text-align:justify;"><strong><span style="color:#333333;">Сума:</span></strong><span style="color:#333333;">{{$sum}} грн.</span></p>
@@ -478,7 +478,7 @@ $totalCoef = floor(($total + floor($total*0.2))*$coefiction);
                         <p style="widows:2; orphans:2; font-size:8px;"><span style="">&nbsp;</span></p>
                     </td>
                     <td style="width:48.75pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
-                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><strong><span style="background-color:white;">{{$totalCoef}}</span></strong></p>
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><strong><span style="background-color:white;">{{floor(($total+($total*0.2))*$coefiction)}}</span></strong></p>
                     </td>
                 </tr>
             </tbody>
