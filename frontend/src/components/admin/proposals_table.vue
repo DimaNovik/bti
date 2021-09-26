@@ -17,6 +17,9 @@
               </b-form-group>
             </b-form>
           </b-col>
+          <b-col cols="12"  md="2" align="left">
+            <b-button type="button" variant="danger" size="lg" @click="startSearch">Пошук</b-button>
+          </b-col>
           <b-col cols="12" md="5">
             <b-form-group label="Пошук за:">
               <b-form-checkbox-group
@@ -27,7 +30,7 @@
               ></b-form-checkbox-group>
             </b-form-group>
           </b-col>
-          <b-col cols="12"  md="4" align="center">
+          <b-col cols="12"  md="2" align="center">
             <b-button type="button" variant="danger" size="lg" @click="$emit('componentChange', 'ProposalsForm')">Додати</b-button>
           </b-col>
         </b-row>
@@ -56,10 +59,9 @@
                        :fields="fields"
                        :current-page="currentPage"
                        :per-page="perPage"
-                       :filter="search"
+                       :filter="filterSearch"
                        :filter-ignored-fields="ignoredFields"
                        :filter-included-fields="selected"
-                       :filter-debounce="200"
                        @filtered="onFiltered"
                        @row-clicked="(item) => openToEdit(item)"
                        class="admin__table">
@@ -106,6 +108,7 @@ export default {
   data() {
     return {
       search: null,
+      filterSearch: null,
       currentPage: 1,
       perPage: 40,
       totalRows: null,
@@ -223,6 +226,17 @@ export default {
       ]
     }
   },
+    watch: {
+        'search': {
+            immediate: false,
+            handler(newVal) {
+                if(!newVal.length) {
+                    this.filterSearch = null;
+                }
+            }
+
+        },
+    },
   computed: {
     ...mapGetters(['proposalsData']),
     setAllDataTable() {
@@ -237,8 +251,11 @@ export default {
     },
     onFiltered(filteredItems) {
       this.totalRows = filteredItems.length
-
-    }
+      this.currentPage = 1
+    },
+      startSearch() {
+        this.filterSearch = this.search;
+      }
   },
   created() {
     this.totalRows = this.proposalsData.length

@@ -54,6 +54,7 @@ export default new Vuex.Store({
 
       let allPages = data.map(item => ({text: item.name, value: item.id}));
 
+
       let parents = data.filter(item => item.parent === 0);
       let childs = data.filter(item => item.parent !== 0);
 
