@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class News extends Model
+class bti_news extends Model
 {
     //
-    protected $fillable = ['name', 'text', 'img', 'updated_at'];
+    protected $fillable = ['id', 'name', 'text', 'img', 'updated_at'];
 
     public static function create($fields)
     {

@@ -31,6 +31,8 @@ import InventForm from "@/components/admin/invent_form";
 import ProposalsTable from "@/components/admin/proposals_table";
 import ProposalsForm from "@/components/admin/proposals_form";
 import StartTemplate from "@/components/admin/start_template";
+import NewsTable from "@/components/admin/news_table";
+import AddNews from "@/components/admin/add_news";
 
 import { mapGetters, mapActions } from 'vuex';
 export default {
@@ -51,7 +53,9 @@ export default {
     ProposalsTable,
     ProposalsForm,
     StartTemplate,
-    UpdatePages
+    UpdatePages,
+    NewsTable,
+    AddNews,
   },
   computed: {
     ...mapGetters(['user']),

@@ -19,6 +19,7 @@ export default new Vuex.Store({
     pagesCategories: [],
     content: null,
     news: [],
+    currentNews: null
   },
   mutations: {
     setAllData: (state, data) => {
@@ -85,6 +86,10 @@ export default new Vuex.Store({
 
     setAllNewsData: (state, data) => {
       state.news = data;
+    },
+
+    setCurrentNewsData: (state, data) => {
+      state.currentNews = data;
     },
   },
   actions: {
@@ -273,7 +278,7 @@ export default new Vuex.Store({
 
       return data;
     },
-    async getAllNewsData({commit}) {
+    async fetchNewsData({commit}) {
       let {data} = await rest({
         method: 'get',
         url:'news'
@@ -282,6 +287,25 @@ export default new Vuex.Store({
       console.log(data);
 
       commit('setAllNewsData', data);
+    },
+    async addNewsContent(_, params) {
+      let {data} = await rest({
+        method: 'post',
+        url:`news`,
+        data: params
+      });
+
+      return data;
+    },
+    async getCurrentNews({commit}, id) {
+      let {data} = await rest({
+        method: 'get',
+        url:`news/${id}`
+      });
+
+      commit('setCurrentNewsData', data);
+
+      return data;
     },
   },
   modules: {
@@ -299,5 +323,7 @@ export default new Vuex.Store({
     content: (state) => state.content,
     allPages: (state) => state.pages,
     allPagesContent: (state) => state.pagesContent,
+    newsData: (state) => state.news,
+    currentNews: (state) => state.currentNews
   }
 })

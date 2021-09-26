@@ -13,7 +13,7 @@ const routes = [
     component: Home,
     beforeEnter(to, from, next) {
       store.dispatch('fetchPagesCategories').finally(() => {
-        store.dispatch('getAllNewsData').finally(() => {
+        store.dispatch('fetchNewsData').finally(() => {
           next();
         })
       })
@@ -43,6 +43,16 @@ const routes = [
         store.dispatch('getCurrentContent', to.params.id).finally(() => {
           next();
         })
+      })
+    },
+  },
+  {
+    path: '/news/:id',
+    name: 'InnerNews',
+    component: () => import(/* webpackChunkName: "about" */ '../views/InnerNews.vue'),
+    beforeEnter(to, from, next) {
+      store.dispatch('getCurrentNews', to.params.id).finally(() => {
+        next();
       })
     },
   },

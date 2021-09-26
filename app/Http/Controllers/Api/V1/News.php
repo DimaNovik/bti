@@ -1,7 +1,9 @@
 <?php
-use App\news;
+namespace App\Http\Controllers\Api\V1;
+
+use App\bti_news;
 use Illuminate\Http\Request;
-namespace App\Http\Controllers;
+use App\Http\Controllers\Controller;
 
 class News extends Controller
 {
@@ -13,7 +15,7 @@ class News extends Controller
 
         public function index()
         {
-            $content = news::all();
+            $content = bti_news::orderBy('id', 'desc')->get();
             return $content;
         }
 
@@ -24,7 +26,7 @@ class News extends Controller
          */
         public function create()
         {
-            $content = news::create($request->all());
+            $content = bti_news::create($request->all());
             return $content;
         }
 
@@ -36,7 +38,7 @@ class News extends Controller
          */
         public function store(Request $request)
         {
-            $content = news::create($request->all());
+            $content = bti_news::create($request->all());
             return $content;
         }
 
@@ -48,7 +50,7 @@ class News extends Controller
          */
         public function show($id)
         {
-            return news::findOrFail($id);
+            return bti_news::findOrFail($id);
         }
 
         /**
@@ -71,7 +73,7 @@ class News extends Controller
          */
         public function update(Request $request, $id)
         {
-            $pages = news::findOrFail($id);
+            $pages = bti_news::findOrFail($id);
             $pages->update($request->all());
 
             return $pages;
@@ -91,7 +93,7 @@ class News extends Controller
 
         public function categories()
         {
-            $content = news::all();
+            $content = bti_news::all();
             return $content;
         }
 }

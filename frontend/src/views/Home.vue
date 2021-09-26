@@ -2,34 +2,24 @@
   <div class="home">
     <b-container>
       <b-row class="mb-5 mt-5">
-        <b-col cols="6">
-          <div class="news__left">
-            <h1>Новини</h1>
-            <div>
-              <img src="" alt="">
-              <p>Короткий текст</p>
-              <p>05.09.2021</p>
-            </div>
-          </div>
-        </b-col>
-        <b-col cols="4">
-          <ul class="news__right">
-            <li>
-              <img src="" alt="">
-              <p>Текст</p>
-              <p>04.01.2021</p>
-            </li>
-            <li>
-              <img src="" alt="">
-              <p>Текст</p>
-              <p>04.01.2021</p>
-            </li>
-            <li>
-              <img src="" alt="">
-              <p>Текст</p>
-              <p>04.01.2021</p>
-            </li>
-          </ul>
+        <b-col cols="10">
+          <h1 class="mb-4">Новини</h1>
+          <template v-if="getNews.length">
+            <b-row>
+              <b-col cols="4" v-for="(item, key) in getNews" :key="key" class="news mb-4">
+                <a href="#" @click.prevent="navigateToNews(item.id)"><h3 class="news__title">{{item.name}}</h3></a>
+                <p v-html="item.text" class="news__text"></p>
+                <p align="right" class="news__date">Дата: 20.02.2021</p>
+              </b-col>
+            </b-row>
+          </template>
+          <template v-else>
+            <b-row class="mt-5">
+              <b-col>
+                <p class="red">Новини відсутні</p>
+              </b-col>
+            </b-row>
+          </template>
         </b-col>
       </b-row>
     </b-container>
@@ -37,10 +27,21 @@
 </template>
 
 <script>
-
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'Home',
+  computed: {
+    ...mapGetters(['newsData']),
+    getNews() {
+      return this.newsData.length ? this.newsData : []
+    }
+  },
+  methods: {
+    navigateToNews(id) {
+      this.$router.push(`/news/${id}`)
+    }
+  }
 
 }
 </script>
@@ -70,4 +71,19 @@ export default {
 {
   opacity: 0;
 }
+  .news {
+
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__text {
+      max-height: 80px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    &__date {
+      color: rgb(#000, .5);
+    }
+  }
 </style>

@@ -47,7 +47,7 @@ export default {
         },
         {
           title: 'Новини',
-          component: 'AddNews',
+          component: 'NewsTable',
           role: [1]
         }
       ]
