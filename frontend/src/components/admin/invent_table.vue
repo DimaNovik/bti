@@ -241,11 +241,10 @@ export default {
       this.currentPage = 1
     }
   },
-  created() {
-    this.totalRows = this.inventoriesData.length
-  },
   mounted() {
-    this.getAllData()
+    this.getAllData().then(() => {
+      this.totalRows = this.inventoriesData.length;
+    });
   }
 }
 </script>

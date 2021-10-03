@@ -7,6 +7,11 @@
         </b-col>
       </b-row>
       <b-row class="mb-5 mt-5" align-v="center">
+        <b-col cols="12" md="6" xl="6">
+          <img :src="`/public/uploads/${getContent['img']}`" alt="" />
+        </b-col>
+      </b-row>
+      <b-row class="mb-5 mt-5" align-v="center">
         <b-col cols="12" md="12" xl="12">
           <div v-html="getContent['text']"></div>
         </b-col>

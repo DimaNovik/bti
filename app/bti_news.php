@@ -2,12 +2,13 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
 
 class bti_news extends Model
 {
     //
-    protected $fillable = ['id', 'name', 'text', 'img', 'updated_at'];
+    protected $fillable = ['id', 'name', 'text', 'img'];
 
     public static function create($fields)
     {
@@ -23,4 +24,18 @@ class bti_news extends Model
         $this->fill($fields);
         $this->save();
     }
+
+    public function uploadImage($image)
+        {
+            if($image === null) { return; }
+
+            $this->removeImage();
+            $filename = str_random(10) . '.' . $image->extension();
+            $image->save(public_path('uploads').$name);
+        }
+        public function removeImage() {
+                if($this->img != null) {
+                    Storage::delete('uploads/' . $this->img);
+                }
+            }
 }

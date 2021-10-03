@@ -110,7 +110,7 @@ export default {
       search: null,
       filterSearch: null,
       currentPage: 1,
-      perPage: 40,
+      perPage: 20,
       totalRows: null,
       json_fields: {
         '№ замовлення': 'code',
@@ -257,11 +257,10 @@ export default {
         this.filterSearch = this.search;
       }
   },
-  created() {
-    this.totalRows = this.proposalsData.length
-  },
   mounted() {
-    this.getAllProposalsData()
+    this.getAllProposalsData().then(() => {
+      this.totalRows = this.proposalsData.length
+    })
   }
 }
 </script>

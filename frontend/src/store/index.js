@@ -284,8 +284,6 @@ export default new Vuex.Store({
         url:'news'
       });
 
-      console.log(data);
-
       commit('setAllNewsData', data);
     },
     async addNewsContent(_, params) {
@@ -304,6 +302,23 @@ export default new Vuex.Store({
       });
 
       commit('setCurrentNewsData', data);
+
+      return data;
+    },
+    async updateNewsContent(_, params) {
+      let {data} = await rest({
+        method: 'patch',
+        url:`news/${params.id}`,
+        data: params.data
+      });
+
+      return data;
+    },
+    async deleteNewsContent(_, id) {
+      let {data} = await rest({
+        method: 'delete',
+        url:`news/${id}`,
+      });
 
       return data;
     },

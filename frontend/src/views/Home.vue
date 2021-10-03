@@ -2,14 +2,14 @@
   <div class="home">
     <b-container>
       <b-row class="mb-5 mt-5">
-        <b-col cols="10">
+        <b-col md="10" cols="12">
           <h1 class="mb-4">Новини</h1>
           <template v-if="getNews.length">
             <b-row>
-              <b-col cols="4" v-for="(item, key) in getNews" :key="key" class="news mb-4">
-                <a href="#" @click.prevent="navigateToNews(item.id)"><h3 class="news__title">{{item.name}}</h3></a>
+              <b-col md="6" lg="4" cols="12" v-for="(item, key) in getNews" :key="key" class="news mb-4">
+                <a href="#" @click.prevent="navigateToNews(item.id)"><h4 class="news__title">{{item.name}}</h4></a>
                 <p v-html="item.text" class="news__text"></p>
-                <p align="right" class="news__date">Дата: 20.02.2021</p>
+                <p align="right" class="news__date">Дата: {{item.updated_at}}</p>
               </b-col>
             </b-row>
           </template>
@@ -78,11 +78,12 @@ export default {
     }
 
     &__text {
-      max-height: 80px;
+      max-height: 50px;
       margin-bottom: 10px;
       overflow: hidden;
     }
     &__date {
+      font-size: 12px;
       color: rgb(#000, .5);
     }
   }

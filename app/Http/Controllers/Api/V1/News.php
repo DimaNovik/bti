@@ -39,6 +39,7 @@ class News extends Controller
         public function store(Request $request)
         {
             $content = bti_news::create($request->all());
+            $content->uploadImage($request->file('img'));
             return $content;
         }
 
@@ -87,7 +88,9 @@ class News extends Controller
          */
         public function destroy($id)
         {
-            //
+            $pages = bti_news::findOrFail($id);
+            $pages->delete();
+            return '';
         }
 
 

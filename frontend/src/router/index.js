@@ -20,11 +20,6 @@ const routes = [
     }
   },
   {
-    path: '/find-invent',
-    name: 'InventPage',
-    component: InventPage,
-  },
-  {
     path: '/admin',
     name: 'Admin',
     component: () => import(/* webpackChunkName: "about" */ '../views/Admin.vue'),
@@ -39,6 +34,9 @@ const routes = [
     name: 'Inner',
     component: () => import(/* webpackChunkName: "about" */ '../views/Inner.vue'),
     beforeEnter(to, from, next) {
+      if(to.params.id === 24) {
+        next('/find-invent')
+      }
       store.dispatch('fetchPagesCategories').finally(() => {
         store.dispatch('getCurrentContent', to.params.id).finally(() => {
           next();
@@ -55,6 +53,11 @@ const routes = [
         next();
       })
     },
+  },
+  {
+    path: '/find-invent',
+    name: 'InventPage',
+    component: InventPage,
   },
 ]
 

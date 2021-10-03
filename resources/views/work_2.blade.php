@@ -21,14 +21,14 @@ $i3 = 13;
 $i4 = 84;
 $i5 = 86;
 $i6 = 129;
-$i7 = $additionally*21;
+$i7 = $additionally*17.5;
 $i8 = 13;
 $i9 = 13;
 $i10 = 13;
-$i11 = $copyes;
-$j7= round($additionally*0.114);
+$i11 = $copyes * 0.8;
+$j7= floor($additionally*0.114);
 $k7=    7*$i7;
-$total = round($i1 + $i3 + $i4 + $i5 + $i6 + $i7 + $i8 + $i9 + $i10 + $i11);
+$total = ceil($i1 + $i3 + $i4 + $i5 + $i6 + $i7 + $i8 + $i9 + $i10 + $i11);
 @endphp
 <div style="і">
     <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; line-height:115%;"><strong>&nbsp;</strong></p>
@@ -64,7 +64,7 @@ $total = round($i1 + $i3 + $i4 + $i5 + $i6 + $i7 + $i8 + $i9 + $i10 + $i11);
     <p style="margin-top:0pt; margin-bottom:0pt; text-align:center;">МФО 328209, код ЄДРПОУ 03350290, вул. Троїцька, 25, м. Одеса, 65048</p>
     <p style="margin-top:0pt; margin-bottom:0pt;">&nbsp;</p>
     <p class="Standard" align="center">Рахунок за виконання робіт за замовленням</p>
-           <p class="Standard" style="line-height:150%;" align="center"> № {{$code}} від {{$created_at}}</p><p class="Standard"><strong>Адреса:</strong> {{$city}} {{$address}} {{$house_number}} {{$house_building}} {{$apartment}} {{$office}}</p>
+           <p class="Standard" style="line-height:150%;" align="center"> № {{$code}} від {{$created_at}}</p>
            <p style="margin-top:0pt; margin-bottom:0pt;"><strong>Адреса:</strong> {{$city}} {{$address}} {{$house_number}} {{$house_building}} {{$apartment}} {{$office}}</p>
     <p style="margin-top:0pt; margin-bottom:0pt;"><strong>Замовник:</strong> {{$personal_data}}</p>
     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify;"><strong>Вид робіт:</strong> <strong>&ldquo;Відповідь щодо наявності зареєстрованого права власності стосовно юридичних осіб&rdquo;.</strong></p>
@@ -432,7 +432,7 @@ $total = round($i1 + $i3 + $i4 + $i5 + $i6 + $i7 + $i8 + $i9 + $i10 + $i11);
                         <p style='margin:0cm;margin-bottom:.0001pt;font-size:8px;'><span style='font-size:8px;color:black;'>&nbsp;</span></p>
                     </td>
                     <td style="width:2.0cm;border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;;padding:0cm 5.4pt 0cm 5.4pt;height:4.15pt;">
-                        <p style='margin:0cm;margin-bottom:.0001pt;font-size:8px;text-align:center;'><span style='font-size:8px;color:black;'></span><span style="font-size:8px;color:black;">{{round($total*0.2)}}</span></p>
+                        <p style='margin:0cm;margin-bottom:.0001pt;font-size:8px;text-align:center;'><span style='font-size:8px;color:black;'></span><span style="font-size:8px;color:black;">{{floor($total*0.2)}}</span></p>
                     </td>
                     <td style="height:4.15pt;border:none;"><br></td>
                 </tr>
@@ -445,7 +445,7 @@ $total = round($i1 + $i3 + $i4 + $i5 + $i6 + $i7 + $i8 + $i9 + $i10 + $i11);
                         <p style='margin:0cm;margin-bottom:.0001pt;font-size:8px;'><span style='font-size:8px;color:black;'>&nbsp;</span></p>
                     </td>
                     <td style="width:2.0cm;border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;;padding:0cm 5.4pt 0cm 5.4pt;height:8.55pt;">
-                        <p style='margin:0cm;margin-bottom:.0001pt;font-size:8px;text-align:center;'><strong><span style="font-size:8px;color:black;">{{round($total+($total*0.2))}}</span></p>
+                        <p style='margin:0cm;margin-bottom:.0001pt;font-size:8px;text-align:center;'><strong><span style="font-size:8px;color:black;">{{floor($total+floor($total*0.2))}}</span></p>
                     </td>
                     <td style="height:8.55pt;border:none;"><br></td>
                 </tr>
@@ -467,7 +467,7 @@ $total = round($i1 + $i3 + $i4 + $i5 + $i6 + $i7 + $i8 + $i9 + $i10 + $i11);
                         <p style='margin:0cm;margin-bottom:.0001pt;font-size:8px;'><span style='font-size:8px;color:black;'>&nbsp;</span></p>
                     </td>
                     <td style="width:2.0cm;border-top:none;border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;background:white;padding:0cm 5.4pt 0cm 5.4pt;height:  5.9pt;">
-                        <p style='margin:0cm;margin-bottom:.0001pt;font-size:8px;text-align:center;'><strong><span style="font-size:8px;color:black;">{{floor(($total+($total*0.2))*2)}}</span></strong></p>
+                        <p style='margin:0cm;margin-bottom:.0001pt;font-size:8px;text-align:center;'><strong><span style="font-size:8px;color:black;">{{floor(($total+(floor($total*0.2)))*$coefiction)}}</span></strong></p>
                     </td>
                     <td style="height:5.9pt;border:none;"><br></td>
                 </tr>
