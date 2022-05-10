@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="uk-UA">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>
+    </title>
+    <style>
+        body {
+            widows: 0;
+            orphans: 0;
+            font-family: 'Times New Roman', DejaVu Sans, serif;
+            font-size: 10px
+        }
+
+        p {
+            margin: 0pt
+        }
+
+        table {
+            margin-top: 0pt;
+            margin-bottom: 0pt
+        }
+
+        .Standard {
+            widows: 0;
+            orphans: 0;
+            font-size: 10px
+        }
+
+        .Textbody {
+            margin-bottom: 6pt;
+            widows: 0;
+            orphans: 0;
+            font-size: 10px
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="Standard" style="text-align:center; line-height:115%;"><strong>&nbsp;</strong></p>
+        <p class="Standard" style="text-align:center; line-height:115%;"><strong>Комунальне підприємство &ldquo;Бюро технічної інвентаризації&rdquo; Одеської міської ради</strong></p>
+        <p class="Standard" style="text-align:center; line-height:115%;">Замовлення-зобов&apos;язання № {{$code}} від {{$created_at}} на суму {{$sum}} грн.</p>
+        <p class="Standard" style="text-indent:28.35pt; text-align:justify; line-height:115%;">{{$personal_data}}, надалі іменується &ldquo;Замовник&rdquo;, та Комунальне підприємство &ldquo;Бюро технічної інвентаризації&rdquo; Одеської міської ради, надалі іменується &ldquo;Виконавець&rdquo; (а разом - Сторони) уклали цей договір про наступне.</p>
+        <p class="Standard" style="text-align:justify; line-height:115%;">1. Виконавець бере на себе зобов&apos;язання виконати вид роботи <strong>&ldquo;Проставляння штампу у домовій книзі&rdquo;</strong> за адресою: {{$city}} {{$address}} {{$house_number}} {{$house_building}} {{$apartment}} {{$office}} у термін виконання визначений замовником.</p>
+        <p class="Standard" style="text-align:justify; line-height:115%;">2. Замовник зобов&apos;язується сплатити Виконавцю за виконання роботи, що надається згідно з пунктом 1 цього замовлення у розмірі {{$sum}} грн.</p>
+        <p class="Standard" style="text-align:justify; line-height:115%;">3. Виконавець має право отримувати від замовника необхідну документацію для надання послуг за цим договором, а саме: правовстановлювальні документи та їх засвідчені копії, а також інші документи визначені законодавством України.</p>
+        <p class="Standard" style="text-align:justify; line-height:115%;">4. Відповідність за достовірність та повноту інформації, наданої відповідно до цього договору, несе Замовник.</p>
+        <p class="Standard" style="text-align:justify; line-height:115%;">5. Замовник своїм підписом засвідчує, що подані їм документи для укладення договору про надання послуг та подальшого зберігання згідні з оригіналом, у чому він розписується.</p>
+        <p class="Standard" style="text-align:justify; line-height:115%;">6. Замовник надає згоду на скорочення терміну надання послуг за домовленістю Сторін та застосування коефіцієнту 2 до розрахункової вартості затрачених норм часу до 3 днів.</p>
+        <p class="Standard" style="text-align:justify; line-height:115%;"><span style="width:35.4pt; display:inline-block;">&nbsp;</span></p>
+        <p class="Standard" style="text-align:justify; line-height:115%;"><span style="width:35.4pt; display:inline-block;">&nbsp;</span>Замовник_________________________________<span style="width:0.53pt; display:inline-block;">&nbsp;</span></p>
+        <p class="Standard" style="text-align:justify; line-height:115%;"><span style="width:35.4pt; display:inline-block;">&nbsp;</span>(підпис Замовника)</p>
+        <p class="Standard" style="text-align:justify; line-height:115%;">7. За письмовою заявою Замовника повернення оплачених коштів здійснюється:</p>
+        <p class="Standard" style="text-align:justify; line-height:115%;">повністю, якщо виконання договору обумовлено виною Виконавця;</p>
+        <p class="Standard" style="text-align:justify; line-height:115%;">за вирахуванням компенсації витрат, визначених калькуляцією норм часу. У випадку відмови Замовника від послуги після виготовлення замовленого, оплата Виконавцем не повертається.</p>
+        <p class="Standard" style="text-align:justify; line-height:115%;">8. До договору додається акт виконаних робіт.</p>
+        <p class="Standard" style="text-align:justify; line-height:115%;">&nbsp;</p>
+        <p class="Standard" style="text-align:justify; line-height:115%;">Замовник____________________<span style="width:7.73pt; display:inline-block;">&nbsp;</span> <span style="width:32.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span>Приймальник________________________</p>
+        <p class="Standard" style="text-align:justify; line-height:115%;">(підпис Замовника)<span style="width:6.58pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span> <span style="width:32.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span>(підпис Приймальника)</p>
+        <p class="Standard" style="text-align:justify; line-height:115%;">&nbsp;</p>
+        <p class="Standard" style="text-align:justify; line-height:115%;">&nbsp;</p>
+        <p class="Textbody" style="margin-bottom:7.5pt; text-align:justify; widows:2; orphans:2;"><span style="color:#333333;">&nbsp;</span><span style="color:#333333;">_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ __ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _</span></p>
+        <p class="Standard" style="text-align:center;">&nbsp;Комунальне підприємство &ldquo;Бюро технічної інвентаризації&rdquo; Одеської міської ради</p>
+        <p class="Standard" style="text-align:center;">р/р UA 57 328209 0000026007312485201 ПАТ Акціонерний Банк &ldquo;Південний&rdquo;</p>
+        <p class="Standard" style="text-align:center;">МФО 328209, код ЄДРПОУ 03350290, вул. Троїцька, 25, м. Одеса, 65048, тел. 38(048)7378055</p>
+        <p class="Standard">&nbsp;</p>
+       <p class="Standard" align="center">Рахунок за виконання робіт за замовленням</p>
+               <p class="Standard" style="line-height:150%;" align="center"> № {{$code}} від {{$created_at}}</p> <p class="Standard"><strong>Адреса:</strong> {{$city}} {{$address}} {{$house_number}} {{$house_building}} {{$apartment}} {{$office}}</p>
+        <p class="Standard"><strong>Замовник:</strong> {{$personal_data}}</p>
+        <p class="Standard" style="text-align:justify;"><strong>Вид робіт:</strong> <strong>&ldquo;Проставляння штампу у домовій книзі&rdquo;.</strong></p>
+        <p class="Standard" style="text-align:justify;"><strong><span style="color:#333333;">Сума:</span></strong><span style="color:#333333;">{{$sum}} грн.</span></p>
+        <p class="Standard" style="text-align:justify; line-height:150%;"><span style="color:#333333;">&nbsp;</span></p>
+        <p class="Standard" style="text-align:justify; line-height:150%;"><span style="color:#333333;">&nbsp;</span></p>
+        <p style="text-indent:28.35pt; text-align:justify; font-size:8px;">Я, {{$personal_data}}, надалі іменується &ldquo;Замовник&rdquo;, що ознайомлений(а) з вимогами Закону України &ldquo;Про захист персональних даних&rdquo;, надаю згоду Комунальному підприємству &ldquo;Бюро технічної інвентаризації&rdquo; Одеської міської ради, надалі іменується &ldquo;Виконавець&rdquo;, на збір та обробку моїх персональних особистих даних, з метою забезпечення вимог чинного законодавства про державну реєстрацію прав власності, інших майнових прав та їх обтяжень.</p>
+        <p style="text-indent:28.35pt; text-align:justify; font-size:8px;"><span style="width:28.35pt; text-indent:0pt; display:inline-block;">&nbsp;</span>Мені роз&rsquo;яснено, що відповідно до статті 8 Закону України &ldquo;Про захист персональних даних&rdquo; я маю право:</p>
+        <p style="text-indent:28.35pt; text-align:justify; font-size:8px;">1) знати про джерела збирання, місцезнаходження своїх персональних даних, мету їх обробки, місцезнаходження або місце проживання (перебування) володільця чи розпорядника персональних даних або дати відповідне доручення щодо отримання цієї інформації уповноваженим ним особам, крім випадків, встановлених законом;</p>
+        <p style="text-indent:28.35pt; text-align:justify; font-size:8px;">2) отримувати інформацію про умови надання доступу до персональних даних, зокрема інформацію про третіх осіб, яким передаються його персональні дані;</p>
+        <p style="text-indent:28.35pt; text-align:justify; font-size:8px;">3) на доступ до своїх персональних даних;</p>
+        <p style="text-indent:28.35pt; text-align:justify; font-size:8px;">4) отримувати не пізніш як за тридцять календарних днів з дня надходження запиту, крім випадків, передбачених законом, відповідь про те, чи обробляються його персональні дані, а також отримувати зміст таких персональних даних;</p>
+        <p style="text-indent:28.35pt; text-align:justify; font-size:8px;">5) пред&rsquo;являти вмотивовану вимогу володільцю персональних даних із запереченням проти обробки своїх персональних даних;</p>
+        <p style="text-indent:28.35pt; text-align:justify; font-size:8px;">6) пред&apos;являти вмотивовану вимогу щодо зміни або знищення своїх персональних даних будь-яким володільцем та розпорядником персональних даних, якщо ці дані обробляються незаконно чи є недостовірними;</p>
+        <p style="text-indent:28.35pt; text-align:justify; font-size:8px;">7) на захист своїх персональних даних від незаконної обробки та випадкової втрати, знищення, пошкодження у зв&apos;язку з умисним приховуванням, ненаданням чи несвоєчасним їх наданням, а також на захист від надання відомостей, що є недостовірними чи ганьблять честь, гідність та ділову репутацію фізичної особи;</p>
+        <p style="text-indent:28.35pt; text-align:justify; font-size:8px;">8) звертатися із скаргами на обробку своїх персональних даних до Уповноваженого або до суду;</p>
+        <p style="text-indent:28.35pt; text-align:justify; font-size:8px;">9) застосовувати засоби правового захисту в разі порушення законодавства про захист персональних даних;</p>
+        <p style="text-indent:28.35pt; text-align:justify; font-size:8px;">10) вносити застереження стосовно обмеження права на обробку своїх персональних даних під час надання згоди;</p>
+        <p style="text-indent:28.35pt; text-align:justify; font-size:8px;">11) відкликати згоду на обробку персональних даних;</p>
+        <p style="text-indent:28.35pt; text-align:justify; font-size:8px;">12) знати механізм автоматичної обробки персональних даних;</p>
+        <p style="text-indent:28.35pt; text-align:justify; font-size:8px;">13) на захист від автоматизованого рішення, яке має для нього правові наслідки,</p>
+        <p style="text-indent:28.35pt; text-align:justify; font-size:8px;"><a id="n2721"></a>тому зобов&rsquo;язую Виконавця зберігати свої персональні дані та забороняю їх передавати будь-куди або будь-кому.</p>
+        <p style="text-align:center; font-size:8px;">______________________________{{$personal_data}}</p>
+        <p style="text-align:center; font-size:8px;">(підпис, ПІБ Замовника)</p>
+        <p style="font-size:8px; page-break-after: always;">&nbsp;</p>
+        <p style="text-align:center; font-size:8px;">Акт виконаних робіт</p>
+        <p style="text-align:center; font-size:8px;">договір № {{$code}} від {{$created_at}} на суму {{$sum}} грн.</p>
+        <p style="text-indent:28.35pt; text-align:justify; font-size:8px;">Ми, що нижче підписались, Замовник {{$personal_data}}, з однієї сторони та Виконавець з іншої сторони, склали цей Акт в тому, що Виконавцем повністю та в строк повинен виконати вид роботи &ldquo;Проставляння штампу у домовій книзі&rdquo;, згідно з договором № {{$code}} від {{$created_at}} на суму {{$sum}} грн.</p>
+        <table style="border: none;width:500.5pt;margin-left:-12pt;border-collapse:collapse;">
+            <tbody>
+                <tr style="height:62.75pt;">
+                    <td style="width:10.05pt; border:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><strong>№ з/п</strong></p>
+                    </td>
+                    <td style="width:100.3pt; border:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><strong>Склад роботи</strong></p>
+                    </td>
+                    <td style="width:17.55pt; height:42.4pt; margin-right:auto; margin-left:auto; writing-mode:tb-rl; border:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <div style="height:42.4pt; margin-right:auto; margin-left:auto; writing-mode:tb-rl; overflow:hidden;">
+                            <p style="margin-right:5.65pt; margin-left:5.65pt; text-align:center; widows:2; orphans:2; font-size:8px;"><strong>№ пункту із Збірника*</strong></p>
+                        </div>
+                    </td>
+                    <td style="width:38.8pt; border:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <p style="text-align:center; font-size:8px;"><strong>Результат</strong></p>
+                    </td>
+                    <td style="width:17.55pt; height:42.4pt; margin-right:auto; margin-left:auto; writing-mode:tb-rl; border:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <div style="height:42.4pt; margin-right:auto; margin-left:auto; writing-mode:tb-rl; overflow:hidden;">
+                            <p style="margin-right:5.65pt; margin-left:5.65pt; text-align:center; widows:2; orphans:2; font-size:8px;"><strong>Кількість хвилин</strong></p>
+                        </div>
+                    </td>
+                    <td style="width:24.65pt; height:42.4pt; margin-right:auto; margin-left:auto; writing-mode:tb-rl; border:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <div style="height:42.4pt; margin-right:auto; margin-left:auto; writing-mode:tb-rl; overflow:hidden;">
+                            <p style="margin-right:5.65pt; margin-left:5.65pt; text-align:center; font-size:8px;"><strong>Виконавець (норма часу) (год.)</strong></p>
+                        </div>
+                    </td>
+                    <td style="width:24.6pt; height:42.4pt; margin-right:auto; margin-left:auto; writing-mode:tb-rl; border:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <div style="height:42.4pt; margin-right:auto; margin-left:auto; writing-mode:tb-rl; overflow:hidden;">
+                            <p style="margin-right:5.65pt; margin-left:5.65pt; text-align:center; font-size:8px;"><strong>Контролер (норма часу) (год.)</strong></p>
+                        </div>
+                    </td>
+                    <td style="width:45.9pt; height:42.4pt; margin-right:auto; margin-left:auto; writing-mode:tb-rl; border:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <div style="height:42.4pt; margin-right:auto; margin-left:auto; writing-mode:tb-rl; overflow:hidden;">
+                            <p style="margin-right:5.65pt; margin-left:5.65pt; text-align:center; font-size:8px;"><strong>Разом за замовленням</strong><strong>&nbsp;&nbsp;</strong><strong>(норма часу) (год.)</strong></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr style="height:7.35pt;">
+                    <td style="width:10.05pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">1</p>
+                    </td>
+                    <td style="width:100.3pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle;">
+                        <p style="widows:2; orphans:2; font-size:8px;"><span style="">Приймання, укладання та реєстрація договору</span></p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">&nbsp;</p>
+                    </td>
+                    <td style="width:38.8pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">&nbsp;</span><span style="">Договір</span></p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">20</span></p>
+                    </td>
+                    <td style="width:24.65pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,333</span></p>
+                    </td>
+                    <td style="width:24.6pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">&nbsp;</span></p>
+                    </td>
+                    <td style="width:45.9pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,333</span></p>
+                    </td>
+                </tr>
+                <tr style="height:7.35pt;">
+                    <td style="width:10.05pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">2</p>
+                    </td>
+                    <td style="width:100.3pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle;">
+                        <p style="widows:2; orphans:2; font-size:8px;"><span style="">Обробка персональних даних</span></p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">&nbsp;</p>
+                    </td>
+                    <td style="width:38.8pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">Заява</span></p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">5</span></p>
+                    </td>
+                    <td style="width:24.65pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,083</span></p>
+                    </td>
+                    <td style="width:24.6pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">&nbsp;</span></p>
+                    </td>
+                    <td style="width:45.9pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,083</span></p>
+                    </td>
+                </tr>
+                <tr style="height:7.35pt;">
+                    <td style="width:10.05pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">3</p>
+                    </td>
+                    <td style="width:100.3pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle;">
+                        <p style="widows:2; orphans:2; font-size:8px;"><span style="">Виписка рахунків (електронна версія)</span></p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">&nbsp;</p>
+                    </td>
+                    <td style="width:38.8pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">Рахунок</p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">5</span></p>
+                    </td>
+                    <td style="width:24.65pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,083</span></p>
+                    </td>
+                    <td style="width:24.6pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">&nbsp;</span></p>
+                    </td>
+                    <td style="width:45.9pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,083</span></p>
+                    </td>
+                </tr>
+                <tr style="height:21pt;">
+                    <td style="width:10.05pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">4</p>
+                    </td>
+                    <td style="width:100.3pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle;">
+                        <p style="widows:2; orphans:2; font-size:8px;"><span style="">Розшукування інвентаризаційно-реєстраційної справи, унесення в книгу обліку видачі з архіву з позначкою про повернення</span></p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">&nbsp;</p>
+                    </td>
+                    <td style="width:38.8pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">Справа</span></p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">33</span></p>
+                    </td>
+                    <td style="width:24.65pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,550</span></p>
+                    </td>
+                    <td style="width:24.6pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">&nbsp;</span></p>
+                    </td>
+                    <td style="width:45.9pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,550</span></p>
+                    </td>
+                </tr>
+                <tr style="height:21pt;">
+                    <td style="width:10.05pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">5</p>
+                    </td>
+                    <td style="width:100.3pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle;">
+                        <p style="widows:2; orphans:2; font-size:8px;"><span style="">Відбір необхідної інформації в інвентаризаційній та/або реєстраційної справи для складання довідки</span></p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">&nbsp;</p>
+                    </td>
+                    <td style="width:38.8pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">Копії документів</p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">34</span></p>
+                    </td>
+                    <td style="width:24.65pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,567</span></p>
+                    </td>
+                    <td style="width:24.6pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">&nbsp;</span></p>
+                    </td>
+                    <td style="width:45.9pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,567</span></p>
+                    </td>
+                </tr>
+                <tr style="height:12.45pt;">
+                    <td style="width:10.05pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">6</p>
+                    </td>
+                    <td style="width:100.3pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle;">
+                        <p style="widows:2; orphans:2; font-size:8px;"><span style="">Проставлення штампу у домовій книзі</span></p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">2.1</p>
+                    </td>
+                    <td style="width:38.8pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">Штамп</span></p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">22</span></p>
+                    </td>
+                    <td style="width:24.65pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,307</span></p>
+                    </td>
+                    <td style="width:24.6pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,065</span></p>
+                    </td>
+                    <td style="width:45.9pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,372</span></p>
+                    </td>
+                </tr>
+
+                <tr style="height:6.55pt;">
+                    <td style="width:10.05pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">7</p>
+                    </td>
+                    <td style="width:100.3pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="widows:2; orphans:2; font-size:8px;"><span style="">Видача документа замовнику</span></p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">&nbsp;</p>
+                    </td>
+                    <td style="width:38.8pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">Документ</span></p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">5</span></p>
+                    </td>
+                    <td style="width:24.65pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,083</span></p>
+                    </td>
+                    <td style="width:24.6pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">&nbsp;</span></p>
+                    </td>
+                    <td style="width:45.9pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,083</span></p>
+                    </td>
+                </tr>
+                <tr style="height:7.45pt;">
+                    <td style="width:10.05pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">8</p>
+                    </td>
+                    <td style="width:100.3pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle;">
+                        <p style="widows:2; orphans:2; font-size:8px;"><span style="">Складання акта виконання робіт</span></p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">&nbsp;</p>
+                    </td>
+                    <td style="width:38.8pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">Акт</p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">5</span></p>
+                    </td>
+                    <td style="width:24.65pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,083</span></p>
+                    </td>
+                    <td style="width:24.6pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">&nbsp;</span></p>
+                    </td>
+                    <td style="width:45.9pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,083</span></p>
+                    </td>
+                </tr>
+                <tr style="height:7.45pt;">
+                    <td style="width:10.05pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">9</p>
+                    </td>
+                    <td style="width:100.3pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle;">
+                        <p style="widows:2; orphans:2; font-size:8px;">Таксування виконаних робіт (електронна версія)</p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">&nbsp;</p>
+                    </td>
+                    <td style="width:38.8pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">Звіт</p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">5</span></p>
+                    </td>
+                    <td style="width:24.65pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,083</span></p>
+                    </td>
+                    <td style="width:24.6pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">&nbsp;</span></p>
+                    </td>
+                    <td style="width:45.9pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">0,083</span></p>
+                    </td>
+                </tr>
+                <tr style="height:6.85pt;">
+                    <td style="width:10.05pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">&nbsp;</span></p>
+                    </td>
+                    <td style="width:100.3pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><strong>Разом: (без ПДВ х 152 грн)</strong></p>
+                    </td>
+                    <td colspan="4" style="width:166.35pt; border-top:0.75pt solid #000000; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:bottom;">
+                        <p style="widows:2; orphans:2; font-size:8px;"><span style="">&nbsp;</span></p>
+                    </td>
+                    <td style="width:45.9pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><strong>&nbsp;</strong></p>
+                    </td>
+                    <td style="width:48.75pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:white;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><strong>{{round(floatval((($sum/$coefiction) - (($sum/$coefiction) / 6))), 2)}}</strong></p>
+                    </td>
+                </tr>
+                <tr style="height:4.15pt;">
+                    <td style="width:10.05pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><strong>&nbsp;</strong></p>
+                    </td>
+                    <td style="width:100.3pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">ПДВ 20%</p>
+                    </td>
+                    <td colspan="5" style="width:223.05pt; border-top:0.75pt solid #000000; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:bottom;">
+                        <p style="widows:2; orphans:2; font-size:8px;"><span style="">&nbsp;</span></p>
+                    </td>
+                    <td style="width:48.75pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:white;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">{{round(floatval(($sum/$coefiction)/6), 2)}}</span></p>
+                    </td>
+                </tr>
+                <tr style="height:8.55pt;">
+                    <td style="width:10.05pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><span style="">&nbsp;</span></p>
+                    </td>
+                    <td style="width:100.3pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><strong>Разом: (з ПДВ х 182 грн)</strong></p>
+                    </td>
+                    <td colspan="5" style="width:223.05pt; border-top:0.75pt solid #000000; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:bottom;">
+                        <p style="widows:2; orphans:2; font-size:8px;"><span style="">&nbsp;</span></p>
+                    </td>
+                    <td style="width:48.75pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:white;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><strong>{{round(floatval($sum/$coefiction), 2)}}</span></p>
+                    </td>
+                </tr>
+                <tr style="height:5.9pt;">
+                    <td style="width:10.05pt; padding-right:5.4pt; padding-left:5.4pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><strong>&nbsp;</strong></p>
+                    </td>
+                    <td style="width:100.3pt; border-right:0.75pt solid #000000; border-left:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.03pt; vertical-align:middle;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><strong>З урахуванням коефіцієнту:</strong></p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;">&nbsp;</p>
+                    </td>
+                    <td style="width:38.8pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><strong>(1 або 2)</strong></p>
+                    </td>
+                    <td style="width:17.55pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:white;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><strong>{{$coefiction}}</strong></p>
+                    </td>
+                    <td colspan="2" style="width:116.75pt; border-top:0.75pt solid #000000; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:bottom;">
+                        <p style="widows:2; orphans:2; font-size:8px;"><span style="">&nbsp;</span></p>
+                    </td>
+                    <td style="width:48.75pt; border-right:0.75pt solid #000000; border-bottom:0.75pt solid #000000; padding-right:5.03pt; padding-left:5.4pt; vertical-align:middle; background-color:#ffffff;">
+                        <p style="text-align:center; widows:2; orphans:2; font-size:8px;"><strong><span style="background-color:white;">{{$sum}}</span></strong></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="text-align:justify; font-size:8px;">*Збірник норм часу на роботи, що виконуються суб&rsquo;єктами господарювання, які здійснюють технічну інвентаризацію об&rsquo;єктів нерухомого майна, затвердженого наказом Державного комітету України з питань житлово-комунального господарства від 21.11.2003 № 198 (зі змінами).</p>
+        <p style="font-size:8px;">&nbsp;</p>
+        <p style="font-size:8px;">Послуги прийняв<span style="width:11.34pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span> <span style="width:33.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span>Послуги здав Виконавець в особі</p>
+        <p style="font-size:8px;">{{$personal_data}}<span style="width:9pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span>директора Швець Н.В.</p>
+        <p style="font-size:8px;">_________________________________________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="width:22.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span>_________________________</p>
+        <p style="font-size:8px;">(підпис Замовника)<span style="width:4.39pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span> <span style="width:33.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span><span style="width:35.4pt; display:inline-block;">&nbsp;</span>(підпис Виконавця)</p>
+        <p>&nbsp;</p>
+    </div>
+</body>
+
+</html>
